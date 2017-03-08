@@ -3,7 +3,7 @@ Repozitorijum za materijale i zadatke sa vežbi, FTN Web Programiranje 2016/2017
 
 ## 1. MESEC HTML+CSS+HTTP
 
-### 1. NEDELJA HTML (08.03.2017, 10.03.2017)
+#### 1. NEDELJA HTML (08.03.2017, 10.03.2017)
 
 #### 2. NEDELJA JAVA, ponavljanje principa objektno-orijentisanog programiranja, konkurentno i mrežno programiranje u javi (15.03.2017, 17.03.2017)
 
