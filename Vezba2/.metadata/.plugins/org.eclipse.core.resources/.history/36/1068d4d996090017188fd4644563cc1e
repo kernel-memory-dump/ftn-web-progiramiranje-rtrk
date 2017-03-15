@@ -1,0 +1,13 @@
+package rs.ac.uns.ftn.krt.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Torba {
+	List <String> sminka = new ArrayList<>();
+	
+	public boolean hasNesto(String sminka){
+		return sminka.contains(sminka);
+	}
+
+}
