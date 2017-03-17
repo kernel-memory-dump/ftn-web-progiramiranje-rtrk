@@ -1,0 +1,18 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+/**
+ * Klasa koja modeluje prosecnu stoku u Srbiji
+ * @author student
+ *
+ */
+public class Muskarac {
+	private PolniOrgan polniOrgan;
+	private Novcanik novcanik;
+	
+	public Muskarac() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}
