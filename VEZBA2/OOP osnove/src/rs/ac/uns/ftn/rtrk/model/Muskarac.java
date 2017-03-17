@@ -1,0 +1,42 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+public class Muskarac {
+	private static int x;
+	private PolniOrgan polniOrgan;
+	private Novcanik novcanik;
+	
+	{
+		 polniOrgan = new PolniOrgan();
+	}
+	
+	static
+	{
+		/**
+		 * loadLibrary()
+		 */
+	}
+	
+	public Muskarac() {
+		super();
+		x++;
+		// TODO Auto-generated constructor stub
+	}
+
+	public PolniOrgan getPolniOrgan() {
+		return polniOrgan;
+	}
+
+	public void setPolniOrgan(PolniOrgan polniOrgan) {
+		this.polniOrgan = polniOrgan;
+	}
+
+	public Novcanik getNovcanik() {
+		return novcanik;
+	}
+
+	public void setNovcanik(Novcanik novcanik) {
+		this.novcanik = novcanik;
+	}
+	
+	
+}
