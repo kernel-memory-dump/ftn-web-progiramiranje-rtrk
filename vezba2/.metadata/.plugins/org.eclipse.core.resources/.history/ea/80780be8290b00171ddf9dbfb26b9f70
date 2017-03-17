@@ -1,0 +1,18 @@
+package rs.ac.uns.ftn.rtrk.controller;
+import rs.ac.uns.ftn.rtrk.model.PolniOrgan;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PolniOrgan p1 = new PolniOrgan();
+		PolniOrgan p2 = new PolniOrgan();
+
+		System.out.println("p1 == p2"+ (p1 == p2));
+		System.out.println("p1 == p2"+ (p1 == p1));
+		System.out.println("p1.equals(p2)"+ p1.equals(p2));
+		
+		List<PolniOrgan> polniOrgan = new ArrayList<>();
+	}
+
+}

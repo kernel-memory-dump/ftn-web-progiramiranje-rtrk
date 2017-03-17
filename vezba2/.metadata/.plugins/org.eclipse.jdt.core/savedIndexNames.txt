@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+C:\Users\student.DOMAIN\WEBprogramiranje\ftn-web-programiranje-rtrk\vezba2\.metadata\.plugins\org.eclipse.jdt.core
+167680906.index

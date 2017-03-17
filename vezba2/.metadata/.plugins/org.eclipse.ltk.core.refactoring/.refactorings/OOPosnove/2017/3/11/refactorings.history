@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;rs.ac.uns.ftn.rtrk.controler&apos; to &apos;rs.ac.uns.ftn.rtrk.controller&apos;&#x0D;&#x0A;- Original project: &apos;OOPosnove&apos;&#x0D;&#x0A;- Original element: &apos;OOPosnove/src/rs.ac.uns.ftn.rtrk.controler&apos;&#x0D;&#x0A;- Renamed element: &apos;OOPosnove/src/rs.ac.uns.ftn.rtrk.controller&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;rs.ac.uns.ftn.rtrk.controler&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;rs.ac.uns.ftn.rtrk.controler" name="rs.ac.uns.ftn.rtrk.controller" qualified="false" references="true" stamp="1489762656019" textual="false" version="1.0"/>
+</session>

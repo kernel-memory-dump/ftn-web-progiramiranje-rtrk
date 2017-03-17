@@ -1,0 +1,9 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+import java.awt.List;
+
+public class Novcanik {
+	
+  List<String> sadrzaj = new ArrayList<>();
+
+}

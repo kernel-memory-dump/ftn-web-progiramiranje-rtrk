@@ -1,0 +1,13 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+/**
+ * Klasa koja modeluje polni organ
+ * @author student
+ *
+ */
+
+public class PolniOrgan {
+   boolean ispravan;
+	
+	
+}

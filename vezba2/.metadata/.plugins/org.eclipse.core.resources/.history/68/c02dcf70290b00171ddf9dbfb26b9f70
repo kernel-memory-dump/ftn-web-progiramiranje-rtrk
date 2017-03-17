@@ -1,0 +1,12 @@
+package rs.ac.uns.ftn.rtrk.controller;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PolniOrgan p1 = new PolniOrgan();
+		PolniOrgan p2 = new PolniOrgan();
+
+	}
+
+}
