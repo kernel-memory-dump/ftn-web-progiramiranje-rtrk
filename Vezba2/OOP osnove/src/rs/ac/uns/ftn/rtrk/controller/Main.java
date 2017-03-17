@@ -7,7 +7,11 @@ import rs.ac.uns.ftn.rtrk.model.Ispisivo;
 import rs.ac.uns.ftn.rtrk.model.PolniOrgan;
 
 public class Main {
-
+	public static void f1(PolniOrgan p1){
+		System.out.println(p1.getDuzina());
+		
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		PolniOrgan p1 = new PolniOrgan();
@@ -21,8 +25,9 @@ public class Main {
 		//polniOrgani.add(p2);
 		
 		System.out.println("DA LI SADRZI P2?" + polniOrgani.contains(p2));
-	}
 	
+	
+	f1(p1);
 	Ispisivo i = new Ispisivo() {
 		
 		@Override
@@ -32,4 +37,5 @@ public class Main {
 		}
 	};
 	
+}
 }
