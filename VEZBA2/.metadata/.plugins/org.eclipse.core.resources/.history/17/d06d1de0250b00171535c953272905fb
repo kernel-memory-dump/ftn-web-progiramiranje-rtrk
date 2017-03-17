@@ -1,0 +1,16 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+/**
+ * Klasa koja modeluje prosecnu stoku u Srbiji, poyy
+ * @author asistent
+ *
+ */
+public class Muskarac {
+	private PolniOrgan polniOrgan;
+	private Novcanik novcanik;
+	
+
+	
+	
+
+}

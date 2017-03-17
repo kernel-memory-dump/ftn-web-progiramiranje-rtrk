@@ -1,0 +1,7 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+public class Muskarac {
+	private PolniOrgan polniOrgan;
+	
+
+}

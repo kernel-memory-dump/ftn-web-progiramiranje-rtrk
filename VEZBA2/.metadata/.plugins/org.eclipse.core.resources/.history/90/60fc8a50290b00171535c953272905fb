@@ -1,0 +1,15 @@
+package rs.ac.uns.ftn.rtrk.controller;
+
+import rs.ac.uns.ftn.rtrk.model.PolniOrgan;
+
+public class Main {
+
+	public static void main(String[] args) {
+		PolniOrgan p1 = new PolniOrgan();
+		PolniOrgan p2 = new PolniOrgan();
+		
+		
+
+	}
+
+}
