@@ -1,0 +1,12 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+public class Muskarac {
+	private PolniOrgan polniOrgan;
+	private Novcanik novcanik;
+	public Muskarac() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

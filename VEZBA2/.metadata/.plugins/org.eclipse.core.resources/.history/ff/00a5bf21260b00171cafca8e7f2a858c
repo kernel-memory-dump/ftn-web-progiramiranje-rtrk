@@ -1,0 +1,11 @@
+package rs.ac.uns.ftn.rtrk.model;
+
+/**Klasa koja modeluje prosecnu stoku u Srbiji, poyy
+ * 
+ * @author student
+ *
+ */
+
+public class PolniOrgan {
+	
+}
