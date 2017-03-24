@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css" type="text/css" rel="stylesheet"> 
+
+</head>
+<body>
+	ovo ce biti crveno
+
+<span>
+	OVO CE BITI PLAVO
+</span>	
+
+<p> NEKI TEKST
+<span> OVO MORA DA IMA NEKI SPECIJALAN STIL</span>
+
+</p>
+
+<button class="ultraDugme"> PPRO1 </button>
+<button class="ultraDugme"> PPRO2 </button>
+<img src="https://media.timeout.com/images/103444978/image.jpg" id="nasaSlika">
+
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+  </tr>
+</table>
+
+<h1>XXX1 </h1><h1>XXX12 </h1>
+
+<div>
+<input type="number" id="txtUnos">
+</div>
+
+<!-- prvi red -->
+<div>
+<button id="btn1" class="numberPad">1</button>
+<button id="btn2" class="numberPad">2</button>
+<button id="btn3" class="numberPad">3</button>
+</div>
+
+<!-- drugi red -->
+<div>
+<button id="btn4" class="numberPad">4</button>
+<button id="btn5" class="numberPad">5</button>
+<button id="btn6" class="numberPad">6</button>
+</div>
+
+<!-- treci red -->
+<div>
+<button id="btn7" class="numberPad">7</button>
+<button id="btn8" class="numberPad">8</button>
+<button id="btn9" class="numberPad">9</button>
+
+<!-- cetvrti red -->
+<div>
+<button id="btn0" class="numberPad">0</button>
+<button id="btnEquals">=</button>
+<button id="btnSum">+</button>
+</div>
+</div>
+
+<div style=width:20px; word-wrap:brake-word; >
+
+</div>
+
+</body>
+</html>
