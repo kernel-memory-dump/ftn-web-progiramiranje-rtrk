@@ -1,22 +1,28 @@
-body{
+body {
 	color: red;
 }
-span{
-	color: blue;
+
+span {
+   color:blue;
 }
 
-p > span {
-	color: green;
-	background-color: blue;
+p > span { 
+/*  PRIMENA STILA NA SPANOVE U P-u */
+ color:green;
+ background-color: blue;
 }
 
-.ultradugme{
-	background-color: red;
-	color: white;
+.ultraDugme {
+	background-color:black;
+	color:white;
 }
 
+#nashaSlika:hover {
+    width: 240px;
+    height: 240px;
+}
 
-#nasaSlika {
+#nashaSlika {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -31,51 +37,62 @@ p > span {
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-#nasaSlika:hover{
-	width: 240px;
-	height: 240px;
-}
-
-
-tr:nth-child(even){background-color: rgb(131,111,150)}
-tr:nth-child(odd){background-color: rgb(248,189,13)}
+tr:nth-child(even){background-color: rgb(131, 111, 150);  }
+tr:nth-child(odd){background-color: rgb(248, 189, 13);}
 
 th {
-     background-color: white;
-	 color: black;
+	background-color: white;
+	color: black;
+
 }
 
-#txtUnos{
-	display:block;
-	width:76%;
-} 
 
-.numberPad{
+#txtUnos {
+	display: block;
+	width: 76%;
+	
+}
+
+.numberPad {
 	background-color: #555333;
 	color: purple;
 }
 
-.numberPad:hover{
+.numberPad:hover {
 	color: #555333;
-	background-color purple;
+	background-color: purple;
+	
 }
 
-#btnEquals{
+#btnEquals {
 	color: orange;
 	background-color: yellow;
 }
 
-#btnSum{
-	color: red;
+#btnSum {
+	color:red;
 	background-color: pink;
+	
 }
 
-div{
+div {
 	width:500px;
 }
 
-div > button{
+div > button {
 	display:inline-block;
 	width:25%;
 }
+
+
+/***
+
+div > button { 
+
+
+}
+
+
+***/
+
 
