@@ -27,7 +27,7 @@ public class Main {
 		
 		System.out.println("DA LI SADRZI P1? " + polniOrgani.contains(p1));
 		System.out.println("DA LI SADRZI P2? " + polniOrgani.contains(p2));
-		f1(p1);
+		
 		Ispisivo i = new Ispisivo() {
 			
 			@Override
