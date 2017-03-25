@@ -1,0 +1,22 @@
+body {
+    background-color: #e0e0e0;
+    color: #f03030;
+}
+
+.pollockDesc img {
+    border-size: 1px;
+    border-color: red;
+    border-style: solid;
+    float: right;
+}
+
+.gallery {
+    border-color:red;
+    border-size: 1px;
+    border-style: solid;
+    padding: 4px;
+    word-wrap: break-word;
+    width: 220px;
+    float: left;
+}
+
