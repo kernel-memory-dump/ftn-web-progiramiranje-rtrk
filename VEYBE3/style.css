@@ -1,0 +1,136 @@
+body{
+				color:black;
+				background-color:grey;
+			}
+
+			span
+			{
+				color:blue;
+			}
+			
+			p > span 
+			{
+			/* Primena stila na spanove u P-u */
+				color:green;
+				background-color:blue;
+			}
+			
+			.ultraDugme
+			{
+				background-color:black;
+				color:white;
+			}
+			
+			#nasaSlika:hover
+			{
+				width:400px;
+				height:400px;
+			}
+			
+			#nasaSlika 
+			{
+				position: absolute;
+				top: 30%;
+				left: 30%;
+				width: 100px;
+				height: 100px;
+				margin:-60px 0 0 -60px;
+				-webkit-animation:spin 4s linear infinite;
+				-moz-animation:spin 4s linear infinite;
+				animation:spin 4s linear infinite;
+			}
+				@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+				@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+				@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+				
+			tr:nth-child(even){background-color: rgb(131, 111, 150)}
+			tr:nth-child(odd){background-color: rgb(248, 189, 13)}
+			
+			th
+			{
+				background-color:white;
+				color:black;
+			}
+			
+			#txtUnos
+			{
+				display: block;
+				width:76%;
+			}
+			
+			.numberPad
+			{
+				background-color: #555333;
+				color: purple;
+			}
+			
+			.numberPad:hover
+			{
+				color: #555333;
+				background-color:purple;
+			}
+			
+			#btnEquals
+			{
+				color:yellow;
+				background-color:orange;
+			}
+			
+			#btnSum
+			{
+				color:red;
+				background-color: pink;				
+			}
+			
+			div
+			{
+				width:500px;
+				
+			}
+			
+			div > button 
+			{
+				display:inline-block;
+				width:25%;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
