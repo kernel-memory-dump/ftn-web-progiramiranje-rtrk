@@ -1,0 +1,3 @@
+INDEX VERSION 1.129+C:\Users\student.DOMAIN\ra128web\ftn-web-programiranje-rtrk\moja4\.metadata\.plugins\org.eclipse.jdt.core
+45101913.index
+3027656432.index

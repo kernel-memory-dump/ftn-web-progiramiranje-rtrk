@@ -1,0 +1,11 @@
+package com.rt.rk.tims;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Worker worker = new Worker();
+		Thread threadWorker = new Thread(worker);
+		threadWorker.start();
+	}
+
+}
