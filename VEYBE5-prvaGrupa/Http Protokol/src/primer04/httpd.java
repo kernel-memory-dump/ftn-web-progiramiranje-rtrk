@@ -100,65 +100,22 @@ public class httpd {
 				System.out.println(ime);
 				users.add(ime);
 				ps.print(browserResponse());
-			}  else if (resource.startsWith("pronadji?ime=")) {
-				int index = resource.indexOf("=");
-				
-				String ime = resource.substring(index+1).trim();
-				ime = URLDecoder.decode(ime, "UTF-8");
-				if(users.contains(ime)) {
-					String retVal = "HTTP/1.1 200 OK\r\nContent-Type: text/html;charset=UTF-8\r\n\r\n";
-					retVal += "<html><head><title>Prijavljeni korisnici</title></head>\n";
-					retVal += "<body><h1 style='color:green'>PRONADJEN!</h1>";
-					ps.print(retVal);
-				} else {
-					String retVal = "HTTP/1.1 200 OK\r\nContent-Type: text/html;charset=UTF-8\r\n\r\n";
-					retVal += "<html><head><title>Prijavljeni korisnici</title></head>\n";
-					retVal += "<body><h1 style='color:red'>NIJE PRONADJEN!</h1>";
-					ps.print(retVal);
-				}
-			} else if (resource.startsWith("brisanje?ime=")) {
-				// brisanje?ime=Pera&boja=red
-				int index = resource.indexOf("=");
-				int endIndex = resource.indexOf("&");
-				
-				String ime = resource.substring(index+1, endIndex).trim();
-				ime = URLDecoder.decode(ime, "UTF-8");
-				
-				// trazim sledece =
-				index = resource.lastIndexOf("=");
-				String boja = resource.substring(index + 1);
-				// ako ga uopste imamo....
-				if(users.contains(ime)) {
-					users.remove(ime);
-					String retVal = "HTTP/1.1 200 OK\r\nContent-Type: text/html;charset=UTF-8\r\n\r\n";
-					retVal += "<html><head><title>Prijavljeni korisnici</title></head>\n";
-					retVal += "<body><marquee><h1 style='color:" + boja  +  "'>USPESNO IZBRISAN RETARD</h1></marquee>";
-					ps.print(retVal);
-				} else {
-					String retVal = "HTTP/1.1 200 OK\r\nContent-Type: text/html;charset=UTF-8\r\n\r\n";
-					retVal += "<html><head><title>Prijavljeni korisnici</title></head>\n";
-					retVal += "<body><marquee><h1 style='color:" + boja  +  "'>NEMA TOG RETARDA</h1></marquee>";
-					ps.print(retVal);
-				}
-				
-				
-				
-			}
-			
-			else {
+			}  else {
+				// NIJE SE POKLOPILO NI SA JEDNIM URLom za prihvatanje podataka sa forme
 				// zamenimo web separator sistemskim separatorom
 				resource = resource.replace('/', File.separatorChar);
 				file = new File(resource);
 				
+				// AKO NIJE ZAHTEV SA FORME I NIJE FAJL , ONDA VRACAMO 404, NEMA NICEG NA TOM URL
+				// POYYY
 				if(!file.exists()) {
-			
-				// ako datoteka ne postoji, vratimo kod za gresku
-				ps.print("HTTP/1.0 404 File not found\r\n"
-						+ "Content-type: text/html; charset=UTF-8\r\n\r\n<b>404 Нисам нашао:"
-						+ file.getName() + "</b>");
-				// ps.flush();
-				System.out.println("Could not find resource: " + file);
-				return;
+					// ako datoteka ne postoji, vratimo kod za gresku
+					ps.print("HTTP/1.0 404 File not found\r\n"
+							+ "Content-type: text/html; charset=UTF-8\r\n\r\n<b>404 Нисам нашао:"
+							+ file.getName() + "</b>");
+					// ps.flush();
+					System.out.println("Could not find resource: " + file);
+					return;
 				}
 				
 				// ispisemo zaglavlje HTTP odgovora
