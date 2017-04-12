@@ -1,0 +1,25 @@
+body {
+	background-color: lime;
+	border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    color: green;
+   
+}
+
+input[type=text] {
+	
+}
+
+input[type=email] {
+	
+}
+
+input[type=number] {
+	
+}
+
+select {
+	width: 100%;
+}
+
