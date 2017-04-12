@@ -1,0 +1,20 @@
+body{
+	background-color:lime;
+	border-style: solid;
+	border-width: 5px;
+	border-color: green;
+	color:green;
+}
+table{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+h1{
+	margin-left: 10px;
+}
+input[type="submit"]{
+	width:25%;
+}
+h2{
+	margin-left: 10px;
+}
