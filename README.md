@@ -1,6 +1,12 @@
 # ftn-web-progiramiranje-rtrk
 Repozitorijum za materijale i zadatke sa vežbi, FTN Web Programiranje 2016/2017
 
+# KORISNI RESURSI::::
+
+https://www.tutorialspoint.com/java/java_interview_questions.htm
+
+
+
 ## 1. MESEC HTML+CSS+HTTP
 
 #### 1. NEDELJA HTML (08.03.2017, 10.03.2017)
