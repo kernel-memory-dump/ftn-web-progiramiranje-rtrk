@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload = function(){
+	var mojButton = document.getElementById("mojButton");
+	mojButton.onclick = function(){
+		var ele = document.createElement("img");
+		ele.src = "https://vucic.rs/Static/Picture/desna-mala-slika.jpg";
+		document.body.appendChild(ele);
+	}
+	var ajaxButton = document.getElementById("ajaxButton");
+	ajaxButton.onclick = function(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		    	var noviEle = document.createElement("div");
+		    	noviEle.innerHTML = xhttp.responseText;
+		    	document.body.appendChild(noviEle);
+		       	this.responseText;
+		    }
+		};
+		xhttp.open("GET", "vucicuSeceru.txt", true);
+		xhttp.send();
+	}
+	var jsonButton = document.getElementById("jsonButton");
+	jsonButton.onclick = function(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		    	var raw = xhttp.responseText;
+		    	var parsed = JSON.parse(raw);
+		    	alert("Ime je "+parsed.ime);
+		    	alert("Starost je "+parsed.starost);
+		    }
+		};
+		xhttp.open("GET", "primer.json", true);
+		xhttp.send();
+	}
+};
+</script>
+</head>
+<body>
+<button id="mojButton">Moj buton</button>
+<button id="ajaxButton">Ajax Button</button>
+<button id="jsonButton">Json Button</button>
+</body>
+</html>
