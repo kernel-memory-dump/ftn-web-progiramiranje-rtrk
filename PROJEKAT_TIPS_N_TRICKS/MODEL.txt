@@ -1,0 +1,117 @@
+class Korisnik {
+
+    String korisnickoIme;
+ ...
+ ... 
+     List<String> podforumiKojeJeNapravio
+    List<Integer> temeKojeJenapravio
+    List<Integer> komentareKojeJeNapraviJO
+
+}
+
+=====================================================================================================================
+class Podforum {
+
+String naziv;
+String opis;
+String pravila;
+String urlKaIkonici;
+
+String koricnickoImeOdgovornogModeratora;
+List<String> spisakModeratoraPodForuma
+
+}
+=====================================================================================================================
+class Podforum {
+
+String naziv;
+String opis;
+String pravila;
+String urlKaIkonici;
+
+String koricnickoImeOdgovornogModeratora;
+List<String> spisakModeratoraPodForuma
+
+}
+
+=====================================================================================================================
+class Tema  {
+
+int id; <-- Ovo moramo nekako voditi evidenciju dokle je stiglo (AKO IMAMO txt faakl ili binarni 
+String podforum;
+String korisnickoImeAutora; <--- ulogovani korisnik ????
+String tip; // "SLIKA", "LINK", "TEKST"
+String linkDoSlike;
+String link;
+String sadrzaj;
+
+???????????????????????????????
+
+MAPA Koja kaze.... Mapira korisnickoIme na glas 
+
+// true/false
+// true z lajk
+// false za dislike
+AKO GA NEMA U MAPI, ONDA UOPSTE NIEJ LAJKOVAO NITI DISLAJKOVAO!!!!!111
+["Pera"] -> "LIKE"
+["ZIKA"] -> "DISLIKE"
+Map<String, Boolean>  glasoviTeme = new HashMap<String, Boolean>();
+
+
+
+
+
+// provera da li je glasao
+
+if(tema.getGlasoviTeme().containsKey(korisnickoIme)) {
+ // AKO JE GLASAO ima ga u mapi
+
+}
+
+
+if(if(tema.getGlasoviTeme().containsKey(korisnickoIme) &&  teme.getGlasoviTeme().get(korisnickoIme)) {
+
+  // AKO JE TACNO... ONDA JE LAJKOVAO
+
+}
+
+
+if(if(tema.getGlasoviTeme().containsKey(korisnickoIme) &&  !teme.getGlasoviTeme().get(korisnickoIme)) {
+
+  // AKO JE TACNO... ONDA JE LAJKOVAO
+
+}
+=====================================================================================================================
+class Komentar {
+
+private int id; <-- sopstveni ID
+
+private int idTeme;
+// String nazivTeme;
+// String nazivPodForumaTeme;
+ private String sadrzaj;
+ private String korisnickoIme;
+
+int roditeljId; <-- ako je ovo komentar na komentar... ONDA CE BITI NESTO > 0   (id komentara roditelja dadadadada) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// MAPA lajkova
+Map<String, Boolean>  lajkovi = new HashMap<String, Boolean>();
+
+boolean izmenjen; <<-- nakon SVAKOG edita stavimo na true....
+// NAZNAKA DA JE MENJAN!!!!! EditKOmentarServlet stavljana true...
+
+}
+<a href="LajkuKomentarServlet?idkomentara=1"
+
+<a href="DislajkujKomentarServlet?idkomentara
+=1"
+class Poruka {
+
+int id; <--- vetacki kljuccccccccccccc
+String korisnickoImeOdKogaJe;
+String korisnickoImeZaKogaJe'
+String sadrzaj;
+boolean daLijeProcitana;
+=====================================================================================================================
+
+
+}

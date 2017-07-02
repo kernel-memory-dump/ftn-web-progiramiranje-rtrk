@@ -1,0 +1,15 @@
+
+<c:forEach items="komentari" var="komentar">
+<c:if   test="${not komentar.izbrisan}">
+
+<c:if>
+
+</c:forEach>
+
+class Komentar { 
+
+boolean izbrisan;
+
+
+
+}

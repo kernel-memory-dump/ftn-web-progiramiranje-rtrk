@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+function validateForm() {
+    var berba = document.forms["vinoForma"]["berba"].value;
+    if (parseInt(berba) <= 1970) {
+        alert("Berba mora da bude >1970/......");
+        return false;
+    }
+    
+    var naziv = document.forms["vinoForma"]["naziv"].value;
+    if (naziv == "" || naziv == null) {
+        alert("NAZIV  MORA BITI UNET........");
+        return false;
+    }
+    
+}
+
+
+
+
+</script>
+
+</head>
+<body>
+
+	<h1>DODAVANJE VINA GOVNA JEDNA SMRDLJIVA mobilni telefoni nisu
+		vino!</h1>
+
+
+
+	<form name="vinoForma" onsubmit="return validateForm()"   method="POST" action="dodaj-vino">
+		<table>
+			<tr>
+				<!--  TABLE ROW RED VRSTA-->
+				<td>
+					<!--  TABLE DATA KOLONA/KOLONA --> Naziv:
+				</td>
+				<td><input type="text" name="naziv"></td>
+			</tr>
+			<tr>
+				<td>Proizvodjac:</td>
+				<td><input type="text" name="proizvodjac"></td>
+			</tr>
+
+			<tr>
+				<td>Vrsta:</td>
+				<td><select name="vrsta">
+						<!--  new String[] {"Rosé", "Cabernet sauvignon",  "Sauvignon Blanc", "Porto"};  -->
+						<option value="0">Rosé</option>
+						<option value="1">Cabernet sauvignon</option>
+						<option value="2">Sauvignon Blanc</option>
+						<option value="3">Porto</option>
+				</select></td>
+			</tr>
+
+			<tr>
+				<td>Region:</td>
+				<td><input type="text" name="region"></td>
+			</tr>
+			<tr>
+				<td>Berba:</td>
+				<td><input type="text" name="berba"></td>
+			</tr>
+			<tr>
+				<td>Cena:</td>
+				<td><input type="text" name="cena"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Dodaj novo vino"></td>
+
+			</tr>
+
+
+
+
+			<!-- 
+HTML5 kurcina nemre,,,,,:::?? ::(((((( 
+Berba:<input type="number" min="1970" name="naziv"> <br>
+ -->
+
+
+
+		</table>
+	</form>
+
+	<a href="pregledVina.jsp">Spisak vina</a>
+
+</body>
+</html>

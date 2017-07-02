@@ -1,0 +1,10 @@
+Login Servlet 
+
+doPost() { 
+ // objekat klase Korisnik strpan u sesiju, ovo cemo koristi kao dokaz da je ulgoovan i da ima pravo da VIDI forme za dodavanje na jsp stranicama
+ 
+ for Krisnik : korisnici
+ 
+  if korisnickoIme i password dobar 
+  session.setAttribute("user", user);
+}

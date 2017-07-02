@@ -1,0 +1,29 @@
+ <c:if test="${user != null && (user.uloga == "ADMINISTRATOR || user.uloga == "MODERATOR")}
+ 
+ <form action="DodajPodForumServlet" method="post">
+<input ....
+
+type="submit
+>
+
+</c:if>
+
+
+ID| NAZIV |   LINK KA TEMAMA OVOG PODFORUMA | ODG MODERATOR | spisak moderatora| pravila|  OPERACIJE
+<c: forEach items="podforumi"  var="podforum">               
+<Td>
+<!-- OVAKO ISTO I KOD PREGLEDA TEME, link ka svim komentarima,. ISTO TAKO U SVAKOM KOMENTARU LINK KA KOMENTARIMA NA TAJ KOMENTAR 
+  taj servlet stavi u sesiju samo one kojima odgovara id iz linka ovog, odnosno TEME kojima odgovoara ovaj naziv podfurma
+  
+-->
+     <a href="PregledTemePodforumaServlet?podforumNaziv=<c:out value="${podforum.naziv}"/>" >  LINK KA TEMAMA </a>
+</td>
+
+<td>
+<c:if test="${user != null && (user.uloga == "ADMINISTRATOR || user.uloga == "MODERATOR")}
+<a href="IzmerniPodformumServlet?podforumNaziv=<c:out value="${podforum.naziv}"/>" >  IZMENI</a>
+<a href="izvrisiPodforumaServlet?podforumNaziv=<c:out value="${podforum.naziv}"/>" >OBRISI </a>
+
+</c:if>
+
+</td>
