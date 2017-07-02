@@ -1,0 +1,27 @@
+<body>
+<jsp:include source="zajednickiDeoBodijaZaSveJsp.jsp"/>
+<!--  U navigaciji NEMA LINKOVA KA .JSP....SVI LINKOVI IDU NA SERVLET.....DA BI SERVLET UCITAO IZ FAJLA...STAVIO U SESIJU
+I TEK ONDA MOZE DA SE PRIKAZE NA JSP  ,  mvc2 MODEL IDEMOO DECKO OOO SVA LOGIKA U CONTROLLERU(SERVLET)
+// JSP JE GLUP KO K,  SAMO RADI PRIKAZ, SVA LOGIKA JE U CONTROLLERU
+
+
+
+<c:if test="ulogovaniKorisnik.uloga == "ADMINISTRATOR">
+<a href="KorisniciServlet"> RAD SA KORISNICIMA BREEE </a>
+</c:if>
+
+<a href="PregledPodForumaServlet" > Pdoforumi</a>
+<a href="KorisnickaStranaKorisnikaServlet" > Krisnicka strana korisnika </a>
+
+
+
+
+
+</body>
+=====================================================================================================================
+
+
+<c:if test="user != null >
+
+<!-- EDIT forma, dodaj forma, DELETE dugme, edit dug,e  -->
+</c:if>

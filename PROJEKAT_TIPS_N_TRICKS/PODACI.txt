@@ -1,0 +1,69 @@
+class Podaci {
+
+List<Korisnik> korisnici;
+List<Podforum> podforum;
+List<Tema> teme;
+List<KOmentar> komentar;
+List<Poruka> poruke;
+// CREATE, UPDATE, DELETE, izmenu, dodavanje, sve 
+public static synchronized Podaci readPodaci()  {
+      // CITA IZ FAJLA
+ObjectMapper mapper = new ObjectMapper();
+//JSON from file to Object
+User user = mapper.readValue(new File("c:\\podaci.json"), Podaci.class);
+
+}
+
+public static synchronized void writePodaci(Podaci podaci) {
+      // UPISAO U FAJL
+ObjectMapper mapper = new ObjectMapper();
+//Object to JSON in file
+mapper.writeValue(new File("c:\\podaci.json"), podaci);
+
+
+
+
+}
+
+ 
+
+
+}
+=====================================================================================================================
+UPOTREBA KLASE , SVUDA gde imamo edit/delete/add stagod uvek isto readPodaci pa writePodaci!!!!
+
+String naslov = request.getParameter("naslov");
+String putanja = getServletContext().getRealAbsPath("/");
+C:\alati\apache-tomcat\webapps\ProjekatWeb\WebContent\
+
+
+Tema t = new Tema();
+t.setNaslov(t);
+Korisnik ulgoovani = (Korisnik) sesija.getAttibute("user");
+
+...
+Podaci podaci = Podaci.readPodaci();
+List<Tema> teme = podaci.getTeme();
+t.setId(teme.size() + 1); 
+t.setAutorKorisnickoIme(ulogovani.getKorisnickoIme() );
+
+teme.add(t);
+
+// AJD SAD SVE U FAJL SVE ZIIVOO U NFAJL ISPCOETKAAAA
+SVEEEEEEEEEEEEEEEEEEEEEE
+
+Podaci.writePodaci(podaci); <== SVE JKEBENO NAZAD U FAJL
+
+sesija.setAttribute("sveTeme", teme); <<--- svezi spisak tema u sesiji koji se koristi za prikaz na JSP stranici prokeltoj
+
+response.sendReditect("teme.jsp");
+
+
+
+
+
+
+
+
+
+

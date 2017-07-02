@@ -1,0 +1,24 @@
+https://www.mkyong.com/java/how-to-convert-java-object-to-from-json-jackson/
+
+http://www.java2s.com/Code/Jar/j/Downloadjacksonall190jar.htm
+
+staviti jar u WebContent/WEB-INF/lib
+
+1.1 Convert Java object to JSON, writeValue(...)
+
+ObjectMapper mapper = new ObjectMapper();
+User user = new User();
+
+//Object to JSON in file
+mapper.writeValue(new File("c:\\user.json"), user);
+
+
+
+1.2 Convert JSON to Java object, readValue(...)
+
+ObjectMapper mapper = new ObjectMapper();
+String jsonInString = "{'name' : 'mkyong'}";
+
+//JSON from file to Object
+User user = mapper.readValue(new File("c:\\user.json"), User.class);
+

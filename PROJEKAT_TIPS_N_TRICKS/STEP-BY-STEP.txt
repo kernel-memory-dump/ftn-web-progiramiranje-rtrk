@@ -1,0 +1,37 @@
+1. MODEL  
+     
+  Korisnik
+  Podforum
+        |---> TEMA
+           |----> KOMENTAR na nekoj temi
+                    | ------> KOMENTAR na komentar 
+                             | ---> do beskonacno na dole komentar na komentar na komentar na komentar
+							 
+=====================================================================================================================
+2. PODACI U FAJL
+
+Nekako ubaciti sve u neki .txt .json .xml .bin (CE DA PRIMER NEKI POAKZEMO)
+
+.bin mozda....
+.json je isto kul...hmmmmmmmmmmmmm
+
+
+
+=====================================================================================================================
+3.  JSP stranice 
+
+1. Stranica za login
+2. Straniza za registraciju
+3. Stranica za pravljenjje i pregled podforuma 
+           Ima dugme da se ode na TEME nekog podforuma, ima dugme za izmenu podforuma, za brisanje podforuma
+4. Stranica za pregled tema nekog podforuma 
+              Ima dugme za izmeni, izbrisi temu, ima dodaj temu, ima PREGLED komentara 
+
+5. Stranica za pregled KOMENTARA NEKE TEME
+        Ima ko je napisao komentar, kada, sadrzaj komentara i IMA broj lajkove/dislajkova na komentaru i IMA LINK KA KOMENTARIMA TOG KOMENTARA
+
+6. Stranica za pregled komentara na neki komentar
+     Ima ko je napisao komentar, kada, sadrzaj komentara i IMA broj lajkove/dislajkova na komentaru i IMA LINK KA KOMENTARIMA TOG KOMENTARA
+
+7. Stranica za poruke, na njoj se vide poruke ULOGOVANOG KORISNIKA KOJE JE PRIMIJO i ima forma preko koje salje poruke drugim korisnicima
+UPISE SAMO KORISNICKO IME kome salje i tekst poruke  
