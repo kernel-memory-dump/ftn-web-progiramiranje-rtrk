@@ -1,0 +1,5 @@
+package milos.pranjkic.dao;
+
+public class UserDao {
+
+}

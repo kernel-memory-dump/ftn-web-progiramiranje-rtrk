@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+	<title>Korisnici koji su registrovali vozila</title>
+</head>
+<body>
+	<!--  asdasdasdasd   
+	
+	//file:///D:/Zad1.html?ime=nekoIme&marka=saab	
+	 -->
+
+<div width="100p"  height="200px" >
+	asdasdsd
+</div>
+
+<img src="mondrian.jpg" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+   <area shape="rect" coords="0,0,82,126" href="http://blic.rs" alt="Sun">
+  
+</map>
+
+
+
+	<h1><font color="blue"> Registrovani korisnici  </font> </h1>
+	<p>Na ovoj stranici prikazani su korisnici koji su registrovali svoja vozila.</p>
+	<form action="Zad1.html" method="POST">
+		<table border="1">
+		<tr bgcolor="E0E0E0">
+			<th colspan="2"> <font color="blue"> Produyenje registracije  </font> </th>
+		</tr>
+		<tr bgcolor="C2C2C2">
+			<td>Ime </td>
+			<td> <input type="text" name="ime" required >    </td>
+	
+		</tr>
+		<tr bgcolor="E0E0E0">
+			<td>MArka </td>
+			<td>	
+						<select name="marka">
+							  <option value="volvo">Volvo</option>
+							  <option value="korisnik2">Ime Korisnika</option>
+							  <option value="opel">Opel</option>
+							  <option value="audi">Audi</option>
+						</select>
+  </td>
+		
+		</tr>
+		
+		<tr><td colspan="2"> <input type="submit" value="Posalji">
+		</table>
+	</form>
+</body>
+</html>
+	
+		

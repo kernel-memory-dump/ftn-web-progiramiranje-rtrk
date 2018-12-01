@@ -1,0 +1,14 @@
+package milos.pranjkic.model;
+
+public class User {
+	
+	private String ime;
+	private String tip;
+	
+	public User(String ime, String tip)
+	{
+		this.ime = ime;
+		this.tip = tip;
+	}
+
+}

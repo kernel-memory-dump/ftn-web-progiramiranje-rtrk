@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> TEST </h1>
+
+<form method = "POST" action="/regKorisnici/logout">
+	<input type = "submit" value ="IZLOGUJ SE">
+</form>
+
+<form method ="POST" action="/regKorisnici/DodajKorisnika">
+		<input type="text" name="ime" />
+		<select name="tip">
+			<option value="free"> BESPLATNO </option>
+			<option value="standart"> STANDARDNI </option>
+			<option value="premium"> PREMIJUM </option>
+		</select>
+		<input type="submit" value = "posalji"/>
+	</form>
+	
+
+	
+</body>
+</html>

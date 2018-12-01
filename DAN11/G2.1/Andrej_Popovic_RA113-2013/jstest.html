@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function Osoba()
+		{
+			this.ime = "pera";
+			this.zdravo = function()
+			{
+				alert("Zdravo! ja sam " + this.ime);
+			};
+		}
+		var os1 = new Osoba();
+		os1.zdravo();
+
+		document.write("NEKI TEXT NAPISAN DODATNO KODOM");
+		var f1 = function(txt)
+		{
+			alert(txt);
+		};
+
+		f1("PREKO REF");
+		window.onload = function()
+		{
+			var dugme =document.getElementById("btn1");
+			alert("dugme je " + dugme);
+		};
+
+		var brojac = 0;
+		var f2 = function()
+		{
+			brojac++;
+			if(brojac > 3)
+			{
+				clearInterval(intervalHandler);
+				return;
+			}
+			var noviP = document.createElement("p");
+			var txtNode = document.createTextNode("poyy");
+			var div = document.getElementById("logDiv");
+
+			noviP.appendChild(txtNode);
+			div.appendChild(noviP);
+			alert("LOADOVAN #2");
+		};
+
+		var intervalHandler = setInterval(f2, 500);
+
+		setTimeout(function()
+		{
+			alert("Tajmout");
+		}, 5000)
+
+		window.addEventListener("load", f2, false);
+	</script>
+
+	<script type="text/javascript">
+		function mojaFunkcija()
+		{
+			alert("POYY");
+			document.body.style.backgroundColor = "grey";
+			var dugme =document.getElementById("btn1");
+			dugme.style.backgroundColor = "green";
+			document.write("SPRZI STRANICU");
+		}
+	</script>
+	<title>Fokya</title>
+</head>
+<body>
+
+	<button onclick="mojaFunkcija()" id="btn1">EVE GA</button>
+	<script type="text/javascript">
+		var x = "1";
+		var y = 1;
+
+		console.log("X = Y " + (x==y));
+		console.log("X = Y " + (x===y));
+
+		for (var i = 0; i < 5; i++)
+		{
+			console.log("i: " + i);
+		}
+
+		console.log("i je zivo i dalje " + i);
+	</script>
+
+	<script type="text/javascript">
+		document.write("NEKI TEXT NAPISAN DODATNO KODOM1");
+	</script>
+
+<div id="logDiv">
+</div>
+
+</body>
+</html>

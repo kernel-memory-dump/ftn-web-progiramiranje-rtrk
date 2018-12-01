@@ -1,0 +1,147 @@
+<html>
+<head>
+<script>
+
+function Osoba(ime) {
+	this.ime = ime;
+	var self = this;
+/*	
+	var originalGet = document.getElementById;
+	document.getElementById = function(id) {
+		var cvor = originalGet(id);
+		cvor.velue = "hahahaha";
+		return cvor;
+	};//pregazi funckiju*/
+	this.prijatelji = [];
+	this.mapaPrijatelja = {};
+	
+	this.dodajPrijatelja = function(noviPrijatelj) {
+		this.prijatelji.push(noviPrijatelj);
+		if(this.mapaPrijatelja.hasOwnProperty(noviPrijatelj.ime)){
+			alert("Ve si ga dodao, ne moze opet");
+			return;
+		}
+		//objekat_pama["kljuc"] = vrednost;
+		this,mapaPrijatelja[noviPrijatelj.ime] = noviPrijatelj;
+	};
+	
+	
+	this.zdravo = function() {
+		alert("Zdravo ja sam " + this.ime);
+		setTimeout(function(){
+			
+			alert("Ime je: " + this.ime);
+			alert("Ime je: " + self.ime);
+		},1000);
+	};
+	
+}
+var os1 = new Osoba("persa");
+var os2 = new Osoba("jkdshfgkjdshg");
+os1.zdravo();
+setTimeout(function(){
+	alert("HEJ");
+}, 5000);
+
+var i=0;
+var intervalHandle = setInterval(function(){
+	//alert("POzzzz iz INTERVALA");
+	var div = document.getElementById("logDiv");
+	if(div !=null) {
+		var noviP =  document.createElement("p");
+		var nextP = document.createTextNode("broj poziva" + i);
+		noviP.appendChild(nextP);
+		div.appendChild(noviP);
+	}
+	i++;
+	if(i === 3) {
+		clearInterval(intervalHandle);
+	}
+}, 1000);
+
+</script>
+<script>
+window.onload = function(){
+
+	//docyment.write("DODATNO");
+	
+	
+	var txtX = document.getElementById("txtX");
+	var txtY = document.getElementById("txtY");
+	var txtZ = document.getElementById("txtZ");
+	var btnPlus = document.getElementById("btnPlus");
+	var btnMinus = document.getElementById("btnMinus");
+	var btnClear = document.getElementById("btnClear");
+	
+	btnPlus.onclick = function() {
+		var xVrednost = txtX.value;
+		if(xVrednost === ""){
+			alert("morate uneti x!");
+			return;
+		}
+		var yVrednost = txtY.value;
+		if(yVrednost === ""){
+			alert("morate uneti y!");
+			return;
+		}
+		xVrednost = parseInt(xVrednost);
+		yVrednost = parseInt(yVrednost);
+		var zVrednost = xVrednost + yVrednost;
+		
+		txtZ.value = zVrednost;
+		if(txtZ.value > 0) {
+			txtZ.style.backgroundColor = "red";
+		} else if(txtZ.value < 0) {
+			txtZ.style.backgroundColor = "blue";
+		} else {
+			txtZ.style.backgroundColor = "yellow";
+		}
+	};
+	btnMinus.onclick = function() {
+		var xVrednost = txtX.value;
+		if(xVrednost === ""){
+			alert("morate uneti x!");
+			return;
+		}
+		var yVrednost = txtY.value;
+		if(yVrednost === ""){
+			alert("morate uneti y!");
+			return;
+		}
+		xVrednost = parseInt(xVrednost);
+		yVrednost = parseInt(yVrednost);
+		var zVrednost = xVrednost - yVrednost;
+		
+		txtZ.value = zVrednost;
+		
+		txtZ.value = zVrednost;
+		if(txtZ.value > 0) {
+			txtZ.style.backgroundColor = "red";
+		} else if(txtZ.value < 0) {
+			txtZ.style.backgroundColor = "blue";
+		} else {
+			txtZ.style.backgroundColor = "yellow";
+		}
+	};
+	btnClear.onclick = function() {
+		txtX.value="";
+		txtY.value="";
+		txtZ.value="";
+	};
+	
+};
+</script>
+</head>
+<body>
+
+X: <input type="text" id ="txtX"> <br>
+Y: <input type="text" id ="txtY"> <br>
+Z: <input type="text" id ="txtZ" disabled readonly> <br>
+<button id = "btnPlus"> +</button>
+<button id = "btnMinus"> - </button>
+<button id = "btnClear"> C </button>
+
+<div id = "logDiv"> </div>
+</body>
+
+</html>

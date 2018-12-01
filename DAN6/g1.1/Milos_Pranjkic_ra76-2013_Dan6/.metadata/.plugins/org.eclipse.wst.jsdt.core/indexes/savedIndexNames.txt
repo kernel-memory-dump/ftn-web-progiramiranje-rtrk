@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+C:\Users\student.DOMAIN\Desktop\Milos_Pranjkic_ra76-2013_Dan6\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+126849709.index
+1023804195.index
+765504870.index
+660461946.index
+2679738427.index
+2356844509.index
+643546948.index

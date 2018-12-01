@@ -1,0 +1,37 @@
+<html>
+<head>
+<script>
+
+window.onload = function() {
+
+var hendler = function() {
+	alert("ZVEK");
+	};
+
+	var btnKlik = 
+	document.getElementById("btnKlik");
+	btnKlik.onclick = hendler;
+	btnKlik.onclick = function() {
+		alert("NOVI");
+		document.body.backgroundColor = "red";
+	};
+	btnKlik.addEventListener("click", hendler, false);
+	
+	hendler();
+};
+
+</script>
+</head>
+
+<body>
+<button id="btnKlik"> KLIK </button>
+<script>
+
+for(var i = 0; i < 5; i++){
+console.log(i);
+};
+
+
+alert("Zdravo svete");
+</script>
+</body>

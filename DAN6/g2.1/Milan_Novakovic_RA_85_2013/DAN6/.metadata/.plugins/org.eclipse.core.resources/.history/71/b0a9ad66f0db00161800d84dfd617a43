@@ -1,0 +1,5 @@
+package milan.novakovic.dao;
+
+public class UserDao {
+
+}

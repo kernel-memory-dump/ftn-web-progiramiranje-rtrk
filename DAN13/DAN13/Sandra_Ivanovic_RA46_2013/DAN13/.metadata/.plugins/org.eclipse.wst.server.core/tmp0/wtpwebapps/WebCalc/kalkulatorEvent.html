@@ -1,0 +1,192 @@
+<html>
+<head>
+<script src="jquery.js"></script>
+<script>
+
+var sveOk = function(data){
+	alert(data);
+}
+var nijeOk = function(data){
+	alert(data);
+}
+
+setTimeout(function() {
+	$.ajax({
+	  url: "1.txt",
+	  success: sveOk,
+	  error: nijeOk
+	});
+
+
+}, 3000);
+
+setTimeout(function() {
+	$.ajax({
+	  url: "JSONServlet",
+	  success: function(data){
+		  alert("ime je: " +data.ime);
+	  }, 
+	  error: nijeOk,
+	  dataType: 'json'
+	});
+
+
+}, 3000);
+
+setTimeout(function() {
+	var osoba = {};
+	osoba.ime = "Zzzzika";
+	osoba.starost = 15;
+	
+	var strOsoba = JSON.stringify(osoba);
+	
+	$.ajax({
+	  url: "JSONServlet",
+	  data: strOsoba,
+	  success: function(data){
+		  alert("starost je: " +data.starost);
+	  },
+	  type: "POST",
+	  error: nijeOk,
+	  dataType: 'json'
+	});
+
+
+}, 3000);
+
+setTimeout(function() {
+	$.ajax({
+	  url: "JSONListServlet",
+	  success: function(data){
+		 var tbl = $("#tblOsobe");
+		 for(var i= 0; i<data.length; i++){
+			 var trStart = "<tr>";
+			 var tdIme = "<td>" +data[i].ime +"</td>";
+			 var tdStarost = "<td>" +data[i].starost +"</td>";
+			 var trEnd = "</tr>";
+			 
+			 tbl.append(trStart + tdIme + tdStarost + trEnd);
+		 }
+	  }, 
+	  error: nijeOk,
+	  dataType: 'json'
+	});
+
+
+}, 3000);
+
+
+
+$(document).ready(function() {
+	var div = $("#logDiv");
+	div.css("color", "red");
+	div.append("<p> NEKI TEKST </p><button>DUGME</button>");
+	$("#logDiv button").click(function() {
+		$("#logDiv").empty();
+	});
+	
+});
+
+function downloadSomething(url, uspehCallback, neuspehCallback){
+	if(url === "ok.png") {
+		setTimeout(uspehCallback, 5000);
+		//uspehCallback(); // SVE JE OK, ETO TI GA
+	} else {
+		setTimeout(neuspehCallback, 5000);
+	}
+}
+
+downloadSomething("ok.png", function() {
+	alert("SVE BILO OK");
+}, function() {
+	alert("NIJE BILO OK!!");
+});
+
+var pozoviOK = function() {
+	alert("OK PREKO REFERENCE");
+};
+var pozoviNijeOK = function() {
+	alert("NIJE OK PREKO REFERENCE");
+};
+
+downloadSomething("nije-ok.png", pozoviOK, pozoviNijeOK);
+
+
+
+window.onload = function() {
+
+
+
+  var txtX = document.getElementById("txtX");
+  var txtY = document.getElementById("txtY");
+  var txtZ = document.getElementById("txtZ");
+  var btnPlus = document.getElementById("btnPlus");
+
+  document.addEventListener("DoPaint", function(e) {
+	if(e.detail > 0 ) { 
+		txtZ.style.backgroundColor = "red";
+	} else if (e.detail < 0) { 
+		txtZ.style.backgroundColor = "blue";
+	} else { 
+		txtZ.style.backgroundColor = "grey";
+	}
+	
+  });
+
+
+  btnPlus.onclick = function() {
+	var xVrednost = txtX.value;
+	if(xVrednost === "") {
+		alert("morate  uneti x !");
+		return;
+	}
+	
+	var yVrednost = txtY.value;
+	if(yVrednost === "") {
+		alert("morate  uneti y !");
+		return;
+	}
+	xVrednost = parseInt(xVrednost);
+	yVrednost = parseInt(yVrednost);
+	var zVrednost = xVrednost + yVrednost;
+	
+	// AKO JE > 0 , oboji POLJE u CRVENO
+	
+	// AKO JE  < 0 OBOJI u PLAVO
+	
+	// AKO JE == 0 , oboji u SIVO
+	
+	txtZ.value = zVrednost;
+	var eventPayload = { 
+		'detail': zVrednost
+	};
+	var event = new CustomEvent('DoPaint',eventPayload );
+	// ISPALJIVANJE EVENTAAAA
+	document.dispatchEvent(event);
+	
+
+	
+  };
+};
+</script>
+</head>
+<body>
+X: <input type="text" id="txtX"> <br>
+Y: <input type="text" id="txtY"> <br>
+Z: <input type="text" id="txtZ" disabled > <br>
+<button id="btnPlus"> + </button>
+
+
+
+<div id="logDiv">
+
+</div>
+<table>
+
+<tr id="tblOsobe">
+	<th> ime</th>
+	<th> starost</th>
+	
+</tr>
+</table>
+</body>

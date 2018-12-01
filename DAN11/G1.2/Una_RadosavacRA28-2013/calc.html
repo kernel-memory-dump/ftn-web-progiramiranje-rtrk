@@ -1,0 +1,174 @@
+<html>
+<head>
+
+<script>
+	function Osoba(ime){
+		this.ime = ime;
+		var self = this;
+		this.prijatelji = [];
+		this.mapaP = {};
+
+		this.dodajprijatelja = function(noviP){
+			this.prijatelji.push(noviP);
+			if(this.mapaP.hasOwnProperty(noviP.ime)){
+				alert("Dodao si ga vec!");
+				return;
+			}
+			this.mapaP[noviP.ime] = noviP;
+
+		}
+		
+		/*var original = document.getElementById;
+		document.getElementById = function(){
+			var cvor = original;
+			cvor.value = "BUHAHAHHA";
+			return cvor;
+		}*/
+		this.zdravo = function(){
+			alert("Zdravo ja sam " + this.ime);
+			setTimeout(function(){
+				alert("Ime mi je " + this.ime);
+				alert("Ime mi je " + self.ime);
+			},1000);
+		}
+	}
+
+	var os1 = new Osoba("una");
+	var os2 = new Osoba("zika");
+	os1.zdravo();
+
+	os1.dodajprijatelja(os2);
+	os1.dodajprijatelja(os2);
+
+</script>
+<script>
+
+	setTimeout(function() {
+		alert(" hey ");
+	}, 5000);
+	
+	var i = 0;
+	var intervalHandler = setInterval(function(){
+		alert("interval");
+		var div = document.getElementById("logDiv");
+		if( div !== null){
+			var noviP = document.createElement("p");
+			var tekstP = document.createTextNode("PoZdRaV, broj poziva" + i);
+			noviP.appendChild(tekstP);
+			div.appendChild(noviP);
+		}
+		i++;
+		if(i === 3){
+			clearInterval(intervalHandler);
+		}
+	}, 1000);
+	
+</script>
+<script>
+
+	window.onload = function(){
+	
+		//  document.write("DODATNO"); ako  je u onload document.write samo to ispise 
+		var txtX = document.getElementById("txtX");
+		var txtY = document.getElementById("txtY");
+		var txtZ = document.getElementById("txtZ");
+		
+		var btnP = document.getElementById("btnPlus");
+		var btnM = document.getElementById("btnMinus");
+		var btnC = document.getElementById("btnClear");
+		
+		btnP.onclick = function(){
+			var xVre = txtX.value;
+			if(xVre === "" || isNaN(xVre) === true){
+				alert("UNESI X!");
+				return;
+			}
+		
+			var yVre = txtY.value;
+			if(yVre === "" || isNaN(yVre) === true){
+				alert("UNESI Y!");
+				return;
+			}
+			
+			xVre = parseInt(xVre);
+			yVre = parseInt(yVre);
+			
+			var zVre = xVre + yVre;
+			txtZ.value = zVre;
+			
+			if(zVre > 0){
+				txtZ.style.backgroundColor = "red";
+			}else if(zVre == 0){
+				txtZ.style.backgroundColor = "green";
+			}else if(zVre < 0){
+				txtZ.style.backgroundColor = "blue";
+			}
+			
+		}
+		
+		btnM.onclick = function(){
+			var xVre = txtX.value;
+			if(xVre === "" || isNaN(xVre) === true){
+				alert("UNESI X!");
+				return;
+			}
+		
+			var yVre = txtY.value;
+			if(yVre === "" || isNaN(yVre) === true){
+				alert("UNESI Y!");
+				return;
+			}
+			
+			xVre = parseInt(xVre);
+			yVre = parseInt(yVre);
+			
+			var zVre = xVre - yVre;
+			
+			txtZ.value = zVre;
+			
+			if(zVre > 0){
+				txtZ.style.backgroundColor = "red";
+			}else if(zVre == 0){
+				txtZ.style.backgroundColor = "green";
+			}else if(zVre < 0){
+				txtZ.style.backgroundColor = "blue";
+			}
+		}
+		
+		
+		
+		btnC.onclick = function(){
+		
+			txtX.value = "";
+			txtY.value = "";
+			txtZ.value = "";
+			
+			txtZ.style.backgroundColor = "white";
+			
+		}
+	}
+	
+</script>
+
+</head>
+<body>
+
+	X: <input type="text"id="txtX">
+	</br>
+	Y: <input type="text"id="txtY">
+	</br>
+	Z: <input type="text"id="txtZ" disabled>
+	</br>
+	<button id="btnPlus"> + </button>
+	<button id="btnMinus"> - </button>
+	<button id="btnClear"> C </button>
+	
+	<script>
+		document.write("DODATNO");  // ovde je sve kul, stavi ga na kraj
+	</script>
+	
+	<div id="logDiv">
+	</div>
+	
+</body>
+</html>

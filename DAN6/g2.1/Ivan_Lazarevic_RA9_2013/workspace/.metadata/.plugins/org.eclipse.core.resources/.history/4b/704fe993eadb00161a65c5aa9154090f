@@ -1,0 +1,5 @@
+package ivan.lazarevic.model;
+
+public class User {
+
+}

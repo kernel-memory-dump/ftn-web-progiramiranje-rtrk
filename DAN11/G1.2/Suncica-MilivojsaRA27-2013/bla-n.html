@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script>
+	
+		//koristi se da se pregazi neka metoda od celog prozora
+			var originalGet = document.getElementById();
+			document.getElementById = function(){
+				var cvor = originalGet(id);
+				cvor.value = "daskdflcjasmfklsa";
+				return cvor;
+			
+			};
+			
+			
+		function Osoba(ime){
+			this.ime = "Pera";
+			var self = this;
+			this.prijatelji = [];
+			this.mapaPrijatelja = {};
+			
+			
+			this.dodajPrijatelja = function(noviPrijatelj){
+				this.prijatelji.push(noviPrijatelj);
+				if(this.mapaPrijatelja.hasOwnProperty(noviPrijatelj.ime)){
+					alert("Vec si ga dodao ne moze opet");
+					return;
+				}
+				
+				//OBJ_MAPA["KLJUC"] = VEDNOST
+				this.mapaPrijatelja[noviPrijatelj.ime] = noviPrijatelj;
+				
+				
+			};
+			
+			this.zdravo = function(){
+				alert("ime je " + self.ime);
+				setTimeout(function(){
+					alert("ime je " + self.ime);
+				}, 1000);
+			};
+		
+		}
+		
+		var o = new Osoba("kuki");
+		o.zdravo();
+		var o1 = new Osoba("zivoin");
+		o1.zdravo();
+		
+		o1.dodajPrijatelja(o);
+		o1.dodajPrijatelja(o);
+		
+	
+	</script>
+
+	<script>
+	
+		setTimeout(function(){
+			alert("HEHEHHEHE");
+		}, 5000);
+		
+		//setInterval(function(){
+		//	alert("POOPOPOPOPOY");
+		//}, 1000);
+		
+		var i = 0;
+		var intervalHandle = setInterval(function(){
+			var div = document.getElementById("logDiv");
+			if(div !== null){
+				var noviP = document.createElement("p");
+				var textP = document.createTextNode("Broj poziva " + i);
+				noviP.appendChild(textP);
+				div.appendChild(noviP);
+			}
+			
+			//alert("opaopaopa");
+			i++;
+			if(i === 3)
+				clearInterval(intervalHandle);
+		}, 1000);
+	
+		window.onload = function(){
+		
+			//document.write("HHEHEHEHHEHHAHAHAHAHAHA");
+		
+			var txtA = document.getElementById("txtX");
+			var txtB = document.getElementById("txtY");
+			var txtC = document.getElementById("txtZ");
+			var btnPlus = document.getElementById("btnPlus");
+			var btnMinus = document.getElementById("btnMinus");
+			var btnClear = document.getElementById("btnClear");
+			
+			btnPlus.onclick = function(){
+			
+				var xVrednost = txtA.value;
+				if(xVrednost === ""){
+					alert("morate uneti x!");
+					return;
+				}
+				
+				var yVrednost = txtB.value;
+				if(yVrednost === ""){
+					alert("morate uneti y!");
+					return;
+				}
+			
+			
+		
+			xVrednost = parseInt(xVrednost);
+			yVrednost = parseInt(yVrednost);
+			
+			
+			
+			
+			var zVrednost = xVrednost + yVrednost;
+		
+			
+			if(zVrednost > 0){
+				txtC.style.backgroundColor = "red";
+			}else if(zVrednost < 0){
+				txtC.style.backgroundColor = "blue";
+			}else{
+				txtC.style.backgroundColor = "grey";
+			}
+			
+			
+			txtC.value = zVrednost;
+			
+			};
+			
+			
+			btnMinus.onclick = function(){
+			
+				var xVrednost = txtA.value;
+				if(xVrednost === ""){
+					alert("morate uneti x!");
+					return;
+				}
+				
+				var yVrednost = txtB.value;
+				if(yVrednost === ""){
+					alert("morate uneti y!");
+					return;
+				}
+			
+			
+		
+			xVrednost = parseInt(xVrednost);
+			yVrednost = parseInt(yVrednost);
+			
+			var zVrednost = xVrednost - yVrednost;
+			
+			var zVrednost = xVrednost - yVrednost;
+			
+			if(zVrednost > 0){
+				txtC.style.backgroundColor = "red";
+			}else if(zVrednost < 0){
+				txtC.style.backgroundColor = "blue";
+			}else{
+				txtC.style.backgroundColor = "grey";
+			}
+			
+			txtC.value = zVrednost;
+			
+			};
+			
+			btnClear.onclick = function(){
+			
+				txtA.value = "";
+				txtB.value = "";
+				txtC.value = "";
+				
+				txtC.style.backgroundColor = "white";
+				txtC.style.backgroundColor = "white";
+				txtC.style.backgroundColor = "white";
+			
+			};
+		};
+		
+	</script>
+	
+</head>
+
+<body>
+	
+	X: <input type="text" id="txtX"> <br>
+	Y: <input type="text" id="txtY"> <br>
+	Z: <input type="text" id="txtZ"> <br>
+		
+	<button id="btnPlus"> + </button>
+	<button id="btnMinus"> - </button>
+	<button id="btnClear"> Clear </button>
+	
+	<div id = "logDiv">
+		
+	</div>
+	
+</body>
+
+</html>

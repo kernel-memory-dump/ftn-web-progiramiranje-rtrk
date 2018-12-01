@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="POST" action="/RegKorisnici/login">
+	<input type="text" name="username">
+	<input type="password" neme="password">
+	<input type="submit" name="login">
+</form>
+
+</body>
+</html>

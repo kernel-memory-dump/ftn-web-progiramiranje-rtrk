@@ -1,0 +1,5 @@
+package milan.novakovic.model;
+
+public class User {
+
+}

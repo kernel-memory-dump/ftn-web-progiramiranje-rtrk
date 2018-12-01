@@ -1,0 +1,188 @@
+<!-- Milica Matic RA96/2013 -->
+
+<html>
+	<head>
+		<script>
+			function Osoba(ime) {
+				this.ime = ime;
+				var self = this;
+
+				/*var originalGet = document.getElementById;
+				document.getElementById = function(id) {
+					var cvor = originalGet(id);
+					cvor.value = "HAHAHAHAHAHAHAHA";
+					return cvor;
+				};*/
+
+				this.prijatelji = [];
+				this.mapaPrijatelja = {};
+				this.dodajPrijatelja = function(noviPrijatelj) {
+					this.prijatelji.push(noviPrijatelj);
+					if (this.mapaPrijatelja.hasOwnProperty(noviPrijatelj.ime))			// hasOwnProperty ~ contains
+					{
+						alert("Vec si ga dodao, ne moze opet!!!");
+						return;
+					}
+					// OBJEKAT_MAPA["KLJUC"] = VREDNOST
+					this.mapaPrijatelja[noviPrijatelj.ime] = noviPrijatelj;
+					alert("Ime prijatelja " + noviPrijatelj.ime);
+				};
+
+				this.zdravo = function() {
+					alert("Zdravo ja sam " + this.ime);
+					setTimeout(function()
+					{
+						alert("Ime je " + this.ime);		// undefined
+						alert("Ime je " + self.ime);
+					}, 1000);
+				};
+			}
+
+			var os1 = new Osoba("zika");
+			var os2 = new Osoba("pera");
+			os1.dodajPrijatelja(os2);
+			os1.dodajPrijatelja(os2);
+			os1.zdravo();
+		</script>
+
+		<script>
+			setTimeout(function() {
+				alert("HEY");
+			}, 5000);
+
+			var i = 0;
+			var intervalHandle = setInterval(function() {
+				//alert("Poyy iz intervala");
+				var div = document.getElementById("logDiv");
+				if (div !== null) { 			// stranica se load-ovala
+					var newP = document.createElement("p");
+					var textP = document.createTextNode("Broj poziva " + i);
+					newP.appendChild(textP);
+					div.appendChild(newP);
+				}
+				i++;
+				if (i === 3) {
+					clearInterval(intervalHandle);
+				}
+			}, 1000);
+
+			//while(true){}
+		</script>
+		<script>
+			window.onload = function()
+			{
+				//document.write("Dodatno onload");
+
+				var x = document.getElementById("txtX");
+				var y = document.getElementById("txtY");
+				var z = document.getElementById("txtZ");
+
+				var plus = document.getElementById("btnPlus");
+				var minus = document.getElementById("btnMinus");
+				var clear = document.getElementById("btnClear");
+
+
+
+				plus.onclick = function()
+				{
+					var xValue = x.value;
+					if (xValue === "" || isNaN(xValue))
+					{
+						alert("You must enter valid x!!!");
+						return;
+					}
+
+					var yValue = y.value;
+					if (yValue === "" || isNaN(yValue))
+					{
+						alert("You must enter valid y!!!");
+						return;
+					}
+
+					xValue = parseInt(xValue);
+					yValue = parseInt(yValue);
+					var zValue = xValue + yValue;
+					z.value = zValue;
+
+					// Ako je > 0 oboji polje u crveno
+					// Ako je < 0 oboji polje u plavo
+					// Ako je = 0 oboji polje u sivo
+					if (zValue > 0)
+					{
+						z.style.backgroundColor = "pink";
+					} else if (zValue < 0)
+					{
+						z.style.backgroundColor = "aqua";
+					} else
+					{
+						z.style.backgroundColor = "grey";
+					}
+					
+
+					
+				};
+
+				minus.onclick = function()
+				{
+					var xValue = x.value;
+					if (xValue === "" || isNaN(xValue))
+					{
+						alert("You must enter valid x!!!");
+						return;
+					}
+
+					var yValue = y.value;
+					if (yValue === "" || isNaN(yValue))
+					{
+						alert("You must enter valid y!!!");
+						return;
+					}
+
+					xValue = parseInt(xValue);
+					yValue = parseInt(yValue);
+					var zValue = xValue - yValue;
+
+					z.value = zValue;
+
+					if (zValue > 0)
+					{
+						z.style.backgroundColor = "pink";
+					} else if (zValue < 0)
+					{
+						z.style.backgroundColor = "aqua";
+					} else
+					{
+						z.style.backgroundColor = "yellow";
+					}
+				};
+				
+				clear.onclick = function()
+				{
+					x.value = "";
+					y.value = "";
+					z.value = "";
+
+					z.style.backgroundColor = "#grey";
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		X: <input type="text" id="txtX"> <br> <br>
+		Y: <input type="text" id="txtY"> <br> <br>
+		Z: <input type="text" id="txtZ" readonly="true"> <br> <br>
+		<button id="btnPlus"> + </button>
+		<button id="btnMinus"> - </button>
+		<button id="btnClear"> C </button>
+
+		<script>
+			document.write("DODATNO");					// ako nije u onload ispisace ispod, ako jeste ispisace preko svega
+		</script>
+
+		<div id="logDiv">
+
+	</body>
+</html>
+
+<!-- Milica Matic RA96/2013 -->

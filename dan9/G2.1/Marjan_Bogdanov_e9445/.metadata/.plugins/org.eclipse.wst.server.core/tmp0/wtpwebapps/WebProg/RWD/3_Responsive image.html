@@ -1,0 +1,31 @@
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Responsive Images Test Page</title>
+	
+	<script src="picturefill.js"></script>
+	<!-- demo styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body { font-family: Helvetica, sans-serif; background: #222; color: #eee; margin: 20px auto; padding: 0 20px; max-width: 980px; }
+		img { border: 0; width: 100%; display: block; max-width: 100%; }
+		#cred { font-size: .7em; color: #aaa; }
+		a { color: #fff; }
+	</style>
+</head> 
+<body> 
+
+	<h1>Responsive Images Test Page</h1>
+	<img sizes="(min-width: 12em) 50vw, 100vw"
+   srcset="small.jpg 180w, large.jpg 480w, extralarge.jpg 768w">
+
+ <!--
+  sizes atribut ima oblik: (media_upit) širina, (media_upit) širina,... 
+  u gornjem primeru, širina 100vw nema upit, pa je default (ako prethodni upit ne uspe)
+  
+  srcset sadrži spisak slika sa svojim odgovarajuæim širinama
+ -->
+	
+</body>
+</html>

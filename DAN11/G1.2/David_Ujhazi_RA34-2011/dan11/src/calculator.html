@@ -1,0 +1,100 @@
+<html>
+<head>
+
+<script type="text/javascript">
+function Osoba(){
+	this.ime = "pera";
+	this.zdravo = function(){
+		alert("Zdravo ja sam " + this.ime);
+	}
+}
+
+
+var os1 = new Osoba();
+os1.zdravo();
+
+</script>
+
+
+<script type="text/javascript">
+	setTimeout(function() {
+		alert("Time's up bitch");
+	}, 5000);
+
+	var i = 0;
+	var intervalHandle = setInterval(function() {
+		//	alert("poyy iz intervala")
+		var div = document.getElementById("logDiv");
+		if (div !== null) {
+			var noviP = document.createElement("p");
+			var textP = document.createTextNode("Broj poziva " + i);
+			noviP.appendChild(textP);
+			div.appendChild(noviP);
+		}
+		i++;
+		if (i === 3) {
+			clearInterval(intervalHandle);
+		}
+	}, 1000);
+
+	window.onload = function() {
+
+		//document.write("rekt");
+
+		var txtX = document.getElementById("txtX");
+		var txtY = document.getElementById("txtY");
+		var txtZ = document.getElementById("txtZ");
+
+		var btnPlus = document.getElementById("btnPlus");
+		var btnMinus = document.getElementById("btnMinus");
+		var btnClear = document.getElementById("btnClear");
+
+		btnPlus.onclick = function() {
+			var x = txtX.value;
+			if (x === "") {
+				alert("Unesite X !");
+				return;
+			}
+			var y = txtY.value;
+			if (y === "") {
+				alert("Unesite Y !");
+				return;
+			}
+
+			x = parseInt(x);
+			y = parseInt(y);
+			var z = x + y;
+
+			if (z > 0) {
+				txtZ.style.backgroundColor = "red";
+			} else if (z < 0) {
+
+				txtZ.style.backgroundColor = "blue";
+			} else {
+				txtZ.style.backgroundColor = "gray";
+			}
+
+			txtZ.value = z;
+		}
+	}
+</script>
+</head>
+<body>
+	X:
+	<input type="text" id="txtX">
+	<br> Y:
+	<input type="text" id="txtY">
+	<br> Z:
+	<input type="text" id="txtZ">
+	<br>
+	<button id="btnPlus">+</button>
+	<button id="btnMinus">-</button>
+	<button id="btnClear">C</button>
+
+	<script type="text/javascript">
+		document.write("Dodatno");
+	</script>
+
+	<div id="logDiv"></div>
+</body>
+</html>

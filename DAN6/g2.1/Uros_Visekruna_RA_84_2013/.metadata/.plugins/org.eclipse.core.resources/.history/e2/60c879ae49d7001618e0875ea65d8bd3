@@ -1,0 +1,10 @@
+package uros.visekruna.nizovi;
+
+public class GlavnaKlasaNizovi {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

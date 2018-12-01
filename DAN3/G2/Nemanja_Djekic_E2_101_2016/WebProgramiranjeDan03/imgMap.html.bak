@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click on the sun or on one of the planets to watch it closer:</p>
+
+<img src="mondrian.jpg" width="145" height="126" alt="Planets" usemap="#mondrian">
+
+<map name="mondrian">
+  <area shape="rect" coords="23,20,98,96" alt="Sun" href="https://google.com">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="https://en.wikipedia.org/wiki/Mercury_(planet)">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="https://en.wikipedia.org/wiki/Venus">
+</map>
+
+</body>
+</html>

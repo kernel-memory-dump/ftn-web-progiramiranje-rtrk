@@ -1,0 +1,11 @@
+package milos.pranjkic.dao;
+/**
+ * Handles Data persistence related to user
+ * @author student
+ *
+ */
+public class UserDao {
+	
+	private static Lista<User> = new ArrayList<>();
+
+}

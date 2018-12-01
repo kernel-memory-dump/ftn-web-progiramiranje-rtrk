@@ -1,0 +1,157 @@
+<html>
+	<head>
+	
+	<script>
+		
+		function Osoba(ime) {
+		
+		this.ime = ime;
+		var self = this;
+		this.mapaPrijatelja = {};
+		
+		
+		
+		this.dodajPrijatelja = function (noviPrijatelj){
+		
+			//this.prijatelji.push(noviPrijatelj);
+			if (this.mapaPrijatelja.hasOwnProperty(noviPrijatelj.ime)){
+			
+			alert("Vec si ga dodao, ne moze opet");
+			return;
+			}
+			//objekatMapa[kljuc] = vrednost;
+			this.mapaPrijatelja[noviPrijatelj.ime] = noviPrijatelj;
+		};
+		
+		
+		this.zdravo = function(){
+			
+				alert("Zdravo, ja sam " + this.ime );
+			
+			}
+		}	
+		var os1 = new Osoba("zika");
+		os1.zdravo();
+		var os2 = new Osoba("pera");
+		
+		os1.dodajPrijatelja(os2);
+		os1.dodajPrijatelja(os2);
+	
+	</script>
+	
+	
+	<script>
+		/*setTimeout(function(){
+		
+			alert("HEY");
+		
+		}, 5000);*/
+		
+		var i = 0;
+		var intervalHandle = setInterval(function(){
+			while (i < 3){
+			//alert("poz iz intervala");
+				var div = document.getElementById("logDiv");
+				if (div != null){
+					var noviP = document.createElement("p");
+					var textP = document.createTextNode("Broj poziva " + i);
+					noviP.appendChild(textP);
+					div.appendChild(noviP);
+				}
+				i++;
+			}
+			
+		
+		}, 1000);
+	</script>
+	<script>
+	window.onload = function(){
+	
+	
+	
+	var X = document.getElementById("x");
+	var Y = document.getElementById("y");
+	var Z = document.getElementById("z");
+	
+	var btnPlus = document.getElementById("btnPlus");
+	var btnMinus = document.getElementById("btnMinus");
+	var btnClear = document.getElementById("btnClear");
+	
+	btnPlus.onclick = function(){
+	
+		var xVrednost = X.value;
+		if (xVrednost === ""){
+			alert("Morate uneti x!");
+			return; 
+		}
+		var yVrednost = Y.value;
+		if (yVrednost === ""){
+			alert("Morate uneti y!");
+			return; 
+		}
+		
+		xVrednost = parseInt(xVrednost);
+		yVrednost = parseInt(yVrednost);
+		var zVrednost = xVrednost + yVrednost;
+		
+		Z.value = zVrednost;
+		if (zVrednost > 0)
+			Z.style.backgroundColor = "red";
+		else if (zVrednost < 0)
+			Z.style.backgroundColor = "blue";
+		
+		else
+			Z.style.backgroundColor = "grey";
+	};
+	btnMinus.onclick = function(){
+	
+		var xVrednost = X.value;
+		if (xVrednost === ""){
+			alert("Morate uneti x!");
+			return; 
+		}
+		var yVrednost = Y.value;
+		if (yVrednost === ""){
+			alert("Morate uneti y!");
+			return; 
+		}
+		
+		xVrednost = parseInt(xVrednost);
+		yVrednost = parseInt(yVrednost);
+		var zVrednost = xVrednost - yVrednost;
+		
+		Z.value = zVrednost;
+			
+	};
+	
+	btnClear.onclick = function(){
+	
+		Y.value = "";
+		X.value = ""
+		Z.value = "";
+			
+	};
+	
+		
+	}
+	</script>
+	<body>
+	
+	
+	X: <input type="text" id="x"><br>
+	Y: <input type="text" id="y"><br>
+	Z: <input type="text" id="z" disabled ><br>
+	
+	<button id="btnPlus">+ </button>
+	<button id="btnMinus">- </button>
+	<button id="btnClear">C </button>
+	
+	<script>
+	document.write("dodatno");
+	</script>
+	<div id="logDiv">
+	</div>
+		
+	</body>
+	</head>
+</html>

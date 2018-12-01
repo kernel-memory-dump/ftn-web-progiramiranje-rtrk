@@ -1,0 +1,19 @@
+package uros.visekruna.string;
+
+public class GlavnaKlasaString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	
+		String test = "abc";
+		test = test.replace("a", "1");
+		System.out.println(test);
+		
+		
+		
+		
+	}
+
+}

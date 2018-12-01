@@ -1,0 +1,5 @@
+package sandra.ivanovic.dto;
+
+public class OsobaDTO {
+
+}

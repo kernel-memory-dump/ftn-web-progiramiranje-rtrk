@@ -1,0 +1,63 @@
+<html>
+<head>
+<script>
+
+window.onload = function() {
+		
+	var hendler = function() {
+			alert("ZVEK");
+	};
+
+	var btnKlik = 
+	document.getElementById("btnKlik");
+	btnKlik.onclick = hendler;
+	btnKlik.onclick = function() {
+		alert("NOVI")
+		document.body.style.backgroundColor = "red";
+	};
+	
+	btnKlik.addEventListener("click", hendler, false);
+	hendler();
+};
+</script>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+	
+	var x = document.forms["myForm"]["password"].value;
+    if (x == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+}
+</script>
+</head>
+
+
+<body>
+<button id="btnKlik">KLIK</button>
+
+<script>
+
+for(let i = 0; i<5; i++){
+	console.log(i);
+}
+
+alert("Zdravo");
+
+</script>
+
+<form name="myForm" action="demo_form.asp"
+onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+Password: <input type="password" name="password">
+
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

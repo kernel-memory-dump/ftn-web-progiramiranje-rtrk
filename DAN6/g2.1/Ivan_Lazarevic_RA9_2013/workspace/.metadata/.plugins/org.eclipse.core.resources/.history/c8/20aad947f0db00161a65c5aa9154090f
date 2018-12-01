@@ -1,0 +1,5 @@
+package ivan.lazarevic.dao;
+
+public class UserDao {
+
+}

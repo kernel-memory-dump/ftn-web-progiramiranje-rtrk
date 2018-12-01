@@ -1,0 +1,58 @@
+<html>
+<head>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+	x = document.forms["myForm"]["fname"].value;
+	if (x == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+}
+</script>
+
+<script>
+window.onload = function(){
+
+var hendler = function(){
+	alert("zvek");
+};
+
+var btnKlik = document.getElementById("btnKlik");
+btnKlik.onclick = hendler;
+btnKlik.onclick = function(){
+	alert("novi");
+	document.body.style.backgroundColor = "red";
+};
+
+btnKlik.addEventListener("click", hendler, false);
+hendler();
+};
+</script>
+
+</head>
+
+<body>
+<button id="btnKlik">KLIK </button>
+<script>
+
+for(let i = 0; i<5; i++){
+	console.log(i);
+} 
+alert("zdravo");
+</script>
+
+<form name="myForm" action="demo_form.asp"
+onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+
+Password: <input type="text" name="password">
+<input type="submit" value="Submit">
+</form>
+
+</body>

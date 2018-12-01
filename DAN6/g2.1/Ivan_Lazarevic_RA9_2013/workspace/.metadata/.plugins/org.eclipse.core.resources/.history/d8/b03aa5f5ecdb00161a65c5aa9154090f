@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>test</h1>
+		<form method="POST" action="registracijaKorisnika/DodajKorisnika">
+		<input type="text" name="ime" />
+		<select name="tip">
+			<option value="free"> besplatno</option>
+			<option value="standard"> standard</option>
+			<option value="premium"> premium</option>
+		</select>
+		<input type="submit" value="posalji" />
+	</form>
+</body>
+</html>

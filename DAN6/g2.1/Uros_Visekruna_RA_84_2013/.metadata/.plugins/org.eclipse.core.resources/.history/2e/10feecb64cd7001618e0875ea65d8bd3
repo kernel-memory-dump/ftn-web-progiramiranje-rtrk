@@ -1,0 +1,46 @@
+package uros.visekruna.nizovi;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GlavnaKlasaNizovi {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] mojNiz = new int[5];
+		
+		String[] stringNiz = new String[3];
+		
+		for (int i = 0; i < mojNiz.length; i++) {
+			System.out.println(mojNiz[i]);
+		}
+
+		for (int i = 0; i < stringNiz.length; i++) {
+			stringNiz[i] = "" + i;
+			System.out.println(stringNiz[i]);
+		}
+		
+		mojNiz = new int[4];
+		
+		List<String> lista = new ArrayList<>();
+		lista.add("NOVI ELEMENT 1");
+		lista.add("NOVI ELEMENT 2");
+		lista.add("NOVI ELEMENT 3");
+		
+		
+		
+		
+		for(int i = 0; i < lista.size(); i++) {
+			
+			String element = lista.get(i);
+			System.out.println(element);
+			
+		} 
+		
+	
+		
+		
+	}
+
+}

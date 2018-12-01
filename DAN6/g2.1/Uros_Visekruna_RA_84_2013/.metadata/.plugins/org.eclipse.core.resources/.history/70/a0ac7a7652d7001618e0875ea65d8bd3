@@ -1,0 +1,10 @@
+package uros.visekruna.io;
+
+public class GlavnaKlasaIO {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

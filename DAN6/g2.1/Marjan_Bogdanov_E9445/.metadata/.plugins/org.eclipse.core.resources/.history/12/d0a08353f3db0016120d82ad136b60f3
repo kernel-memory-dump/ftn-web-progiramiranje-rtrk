@@ -1,0 +1,28 @@
+package Marjan.Bogdanov.dao;
+
+import java.nio.file.attribute.UserPrincipalLookupService;
+import java.util.ArrayList;
+import java.util.List;
+
+import Marjan.Bogdanov.model.User;
+/**
+ * Data layer for user
+ * @author student
+ *
+ */
+public class UserDao {
+	
+	private static List<User> users = new ArrayList<>();
+	private static Object Lock1 = new Object();
+		
+	public static void addUser(User user) {
+		users.add(user);	
+	}
+	
+	public static List<User> getAllUsers(){
+		return users;
+	}
+	
+	
+
+}

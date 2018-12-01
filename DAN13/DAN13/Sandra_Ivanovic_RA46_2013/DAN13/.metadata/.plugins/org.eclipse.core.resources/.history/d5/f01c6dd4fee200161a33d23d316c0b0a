@@ -1,0 +1,142 @@
+<html>
+<head>
+<script src="jquery.js"></script>
+<script>
+
+var sveOk = function(data){
+	alert(data);
+}
+var nijeOk = function(data){
+	alert(data);
+}
+
+setTimeout(function() {
+	$.ajax({
+	  url: "1.txt",
+	 // data: data, //mozemo da posaljemo nesto serveru
+	  success: sveOk, //fja koju poziva ako bude 200 ok
+	  error: nijeOk
+	  //dataType: '' //jquery automatski parsira u js objekat
+	});
+
+
+}, 3000);
+
+setTimeout(function() {
+	$.ajax({
+	  url: "JSONServlet",
+	  success: sveOk, 
+	  error: nijeOk,
+	  dataType: 'application/json'
+	});
+
+
+}, 3000);
+
+
+$(document).ready(function() {
+	var div = $("#logDiv");
+	div.css("color", "red");
+	div.append("<p> NEKI TEKST </p><button>DUGME</button>");
+	$("#logDiv button").click(function() {
+		$("#logDiv").empty();
+	});
+	
+});
+
+function downloadSomething(url, uspehCallback, neuspehCallback){
+	if(url === "ok.png") {
+		setTimeout(uspehCallback, 5000);
+		//uspehCallback(); // SVE JE OK, ETO TI GA
+	} else {
+		setTimeout(neuspehCallback, 5000);
+	}
+}
+
+downloadSomething("ok.png", function() {
+	alert("SVE BILO OK");
+}, function() {
+	alert("NIJE BILO OK!!");
+});
+
+var pozoviOK = function() {
+	alert("OK PREKO REFERENCE");
+};
+var pozoviNijeOK = function() {
+	alert("NIJE OK PREKO REFERENCE");
+};
+
+downloadSomething("nije-ok.png", pozoviOK, pozoviNijeOK);
+
+
+
+window.onload = function() {
+
+
+
+  var txtX = document.getElementById("txtX");
+  var txtY = document.getElementById("txtY");
+  var txtZ = document.getElementById("txtZ");
+  var btnPlus = document.getElementById("btnPlus");
+
+  document.addEventListener("DoPaint", function(e) {
+	if(e.detail > 0 ) { 
+		txtZ.style.backgroundColor = "red";
+	} else if (e.detail < 0) { 
+		txtZ.style.backgroundColor = "blue";
+	} else { 
+		txtZ.style.backgroundColor = "grey";
+	}
+	
+  });
+
+
+  btnPlus.onclick = function() {
+	var xVrednost = txtX.value;
+	if(xVrednost === "") {
+		alert("morate  uneti x !");
+		return;
+	}
+	
+	var yVrednost = txtY.value;
+	if(yVrednost === "") {
+		alert("morate  uneti y !");
+		return;
+	}
+	xVrednost = parseInt(xVrednost);
+	yVrednost = parseInt(yVrednost);
+	var zVrednost = xVrednost + yVrednost;
+	
+	// AKO JE > 0 , oboji POLJE u CRVENO
+	
+	// AKO JE  < 0 OBOJI u PLAVO
+	
+	// AKO JE == 0 , oboji u SIVO
+	
+	txtZ.value = zVrednost;
+	var eventPayload = { 
+		'detail': zVrednost
+	};
+	var event = new CustomEvent('DoPaint',eventPayload );
+	// ISPALJIVANJE EVENTAAAA
+	document.dispatchEvent(event);
+	
+
+	
+  };
+};
+</script>
+</head>
+<body>
+X: <input type="text" id="txtX"> <br>
+Y: <input type="text" id="txtY"> <br>
+Z: <input type="text" id="txtZ" disabled > <br>
+<button id="btnPlus"> + </button>
+
+
+
+<div id="logDiv">
+
+</div>
+
+</body>

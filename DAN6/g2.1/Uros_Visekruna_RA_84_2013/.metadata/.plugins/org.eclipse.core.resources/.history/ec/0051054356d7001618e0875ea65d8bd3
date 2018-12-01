@@ -1,0 +1,35 @@
+package uros.visekruna.string;
+
+public class GlavnaKlasaString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	
+		String test = "abc";
+		test = test.replace("a", "1");
+		System.out.println(test);
+		
+		String test2 = "abc";
+		String test3 = "abc";
+		
+		if(test2 == test3){
+			System.out.println("jednaki su");
+		}
+		else{
+			System.out.println("nisu jednaki");
+		}
+		
+		if(test2.equals(test3)){
+			System.out.println("jednaki su");
+		}
+		else{
+			System.out.println("nisu jednaki");
+		}
+		
+		
+		
+	}
+
+}

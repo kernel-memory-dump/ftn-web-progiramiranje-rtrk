@@ -1,0 +1,5 @@
+package Marjan.Bogdanov.model;
+
+public class User {
+
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>JSPTest</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>WebShopController</display-name>
+    <servlet-name>WebShopController</servlet-name>
+    <servlet-class>controller.WebShopController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WebShopController</servlet-name>
+    <url-pattern>/WebShop</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShoppingCardController</display-name>
+    <servlet-name>ShoppingCardController</servlet-name>
+    <servlet-class>controller.ShoppingCardController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShoppingCardController</servlet-name>
+    <url-pattern>/ShoppingCard</url-pattern>
+  </servlet-mapping>
+</web-app>

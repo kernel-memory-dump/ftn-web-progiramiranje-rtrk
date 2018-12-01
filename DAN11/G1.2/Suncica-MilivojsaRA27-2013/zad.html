@@ -1,0 +1,59 @@
+<html>
+<head>
+	<script>
+		window.onload = function(){
+			/*var btnKlik = document.getElementById("btnKlik");
+			var a= btnKlik.onclick = function(){
+				alert("Caos");
+			}
+			
+			var b = btnKlik.onclick = function(){
+				alert("NOVI");
+				document.body.style.backgroundColor = "red";
+			}
+			
+			btnKlik.addEventListener("click",a,false);*/
+			
+			
+			function validateForm() {
+				var x = document.forms["myForm"]["fname"].value;
+				var y = document.forms["myForm"]["fpassword"].value;
+				if (x == "") {
+					alert("Name must be filled out");
+					return false;
+				
+				}
+				if (y == "") {
+					alert("Password must be filled out");
+					return false;
+				
+				}
+			}
+			
+			
+		};
+		
+	</script>
+</head>
+
+<body>
+	<button id ="btnKlik"> CLICK </button>
+	<script>
+		
+		/*for(let i = 0; i < 5; i++) {
+			console.log(i);	
+		}*/
+	
+		
+		<form name="myForm"
+				onsubmit="return validateForm()" method="post">
+				Name: <input type="text" name="fname">
+				Password: <input type="password" name="fpassword">					
+				<input type="submit" value="Submit">
+		</form>
+	
+	</script>
+	
+</body>
+
+</html>

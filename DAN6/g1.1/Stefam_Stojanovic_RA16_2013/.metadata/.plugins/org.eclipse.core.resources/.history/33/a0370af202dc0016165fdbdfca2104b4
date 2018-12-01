@@ -1,0 +1,5 @@
+package stefan.stojanovic.model;
+
+public class User {
+
+}

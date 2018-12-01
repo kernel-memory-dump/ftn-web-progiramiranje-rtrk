@@ -1,0 +1,141 @@
+<html>
+<head>
+
+<script>
+	function Osoba(ime)
+	{
+		this.ime="Pera";
+		var self=this;
+		this.prijatelji=[];
+		
+		this.mapaPrijatelja={};
+		
+		this.dodajPrijatelja=function(noviPrijatelj)
+		{
+			this.prijatelji.push(noviPrijatelj);
+			if(this.mapaPrijatelja.hasOwnProperty(noviPrijatelj.ime)){
+				alert("vec si ga dodao, ne moze opet");
+				return;
+			}
+			
+			this.mapaPrijatelja[noviPrijatelj.ime]=noviPrijatelj;
+			
+			
+		};
+		
+		var originalGet=document.getElementById;
+		document.getElementById=function(id)
+		{
+			var cvor=originalGet(id);
+			cvor.value="HAHAHHAHAHAHA";
+			return cvor;
+		};
+		
+		this.zdravo=function(){
+			alert("Zdravo, ja sam "+this.ime);
+			
+			setTimeout(function(){
+				alert("ime je "+this.ime);//undefined
+				alert("ime mi je "+self.ime);//pera
+			},1000);
+		};
+	
+	}
+
+	var os1=new Osoba("Zika");
+	var os2=new Osoba("Pera");
+	
+	os1.zdravo();
+	
+	os1.dodajPrijatelja(os2);
+	os1.dodajPrijatelja(os2);
+</script>
+
+
+
+<script>
+	setTimeout(function(){
+		alert("HEJ HEJ HEJ");
+	},500);
+var i=0;
+var intervalHandle=
+	setInterval(function(){
+	
+		var div=document.getElementById("logDiv");
+		if(div!==null)
+		{
+			var noviP=document.createElement("p");
+			var textP=document.createTextNode("Broj Poziva "+i);
+			noviP.appendChild(textP);
+			div.appendChild(noviP);
+		}
+		
+		//alert("Poyyy iz intervala");
+		i++;
+		if(i===3){
+			clearInterval(intervalHandle);
+		}
+	},1000);
+</script>
+
+
+<script>
+window.onload=function(){
+
+	//document.write("dodatno");
+	var txtX=document.getElementById("txtX");
+	var txtY=document.getElementById("txtY");
+	var txtZ=document.getElementById("txtZ");
+	var btnPlus=document.getElementById("btnPlus");
+	var btnMinus=document.getElementById("btnMinus");
+	var btnClear=document.getElementById("btnClear");
+	
+	btnPlus.onclick=function(){
+		var xVrednost=txtX.value;
+		if(xVrednost===""){
+			alert("Morate uneti X!");
+			return;
+		}
+	var yVrednost=txtY.value;
+		if(yVrednost===""){
+			alert("Morate uneti Y!");
+			return;
+		}
+	xVrednost=parseInt(xVrednost);
+	yVrednost=parseInt(yVrednost);
+	var zVrednost=xVrednost+yVrednost;
+	
+	
+	if(zVrednost<0)
+		txtZ.style.backgroundColor="blue";
+	else if(zVrednost>0)
+		txtZ.style.backgroundColor="red";
+	else
+		txtZ.style.backgroundColor="grey";
+	
+	txtZ.value=zVrednost;
+	}
+	
+};
+</script>
+</head>
+<body>
+
+
+X: <input type="text" id="txtX"><br>
+Y: <input type="text" id="txtY"><br>
+Z: <input type="text" id="txtZ" disabled><br>
+
+<button id="btnPlus">+</button>
+<button id="btnMinus">-</button>
+<button id="btnClear">C</button>
+
+<script>
+document.write("dodatno");
+</script>
+<div id="logDiv">
+
+</div>
+
+</body>
+</html>

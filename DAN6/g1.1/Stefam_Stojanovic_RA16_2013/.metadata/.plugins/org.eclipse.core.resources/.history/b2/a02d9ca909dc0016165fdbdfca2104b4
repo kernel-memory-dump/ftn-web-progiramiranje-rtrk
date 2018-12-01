@@ -1,0 +1,66 @@
+package stefan.stojanovic.dao;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import stefan.stojanovic.model.User;
+
+/**
+ * Handles data Presistence related to User
+ * @author student
+ *
+ */
+
+
+public class UserDao {
+
+	
+	/**
+	 *Current DAO state 
+	 */
+	private static List<User> users = new ArrayList<>();
+	
+	
+	/**
+	 * File containing list of users, each row presents a single user
+	 * in the following format:
+	 * ime;tip
+	 * ime;tip
+	 * ime;tip
+	 */
+	private static final String FILE_NAME = "usersFile.txt" ;
+	
+	private Object lock = new Object();
+	
+	/**
+	 * Persists current user to file
+	 * @param user - new user to be added
+	 * @throws FileNotFoundException 
+	 */
+	public void addUser(User user) throws FileNotFoundException{
+		users.add(user);
+		writeFile();
+		
+	}
+
+	private void writeFile() throws FileNotFoundException {
+		synchronized(lock){
+			File f = new File(FILE_NAME);
+			FileOutputStream izlazniStream = new FileOutputStream(f);
+			PrintWriter printer = new PrintWriter(izlazniStream);
+			
+		}
+		
+	}
+	
+	private void readFile() {
+		synchronized(lock){
+			
+		}
+		
+	}
+	
+}

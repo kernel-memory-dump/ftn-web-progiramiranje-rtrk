@@ -1,0 +1,5 @@
+package ivan.lazarevic.controller;
+
+public class User {
+
+}

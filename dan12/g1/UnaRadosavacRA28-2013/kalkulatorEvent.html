@@ -1,0 +1,129 @@
+<html>
+<head>
+
+<script src="jquery.js"></script>
+<script>
+
+$(document).ready(function() {
+	alert("NE BAS");
+	$("#logDiv").append("<h1> JQUERY </h1>");
+	$("#logDiv").css("background-color","blue");
+
+	setTimeout(function(){
+		$("#logDiv").empty();
+	},5000);
+
+	$("#logDiv button").css("background-color","red");
+	$("#logDiv button").click(function(){
+		alert("ON CLICK");
+	});
+
+});
+function download(downloadURL,sucessCallback, failCallback){
+
+	if(downloadURL === "ok.png"){
+		setTimeout(function() {
+			sucessCallback();
+		}, 5000);
+	}else{
+		setTimeout(function() {
+			failCallback();
+		}, 5000);
+	}
+
+}
+
+download("ok.png",function(){
+	alert("PROSAO");
+}, function(){
+	alert("NIJE PROSAO");
+});
+
+var uspeoCall = function(){
+
+	alert("PROSA REF");
+}
+
+
+var nijeuspeoCall = function(){
+
+	alert("NIJE PROSA REF");
+}
+
+download("not-ok.png",uspeoCall,nijeuspeoCall);
+
+window.onload = function() {
+
+
+
+  var txtX = document.getElementById("txtX");
+  var txtY = document.getElementById("txtY");
+  var txtZ = document.getElementById("txtZ");
+  var btnPlus = document.getElementById("btnPlus");
+
+  document.addEventListener("valueChanged", function(e){
+
+  		alert("BRAVO");
+
+	  	if(e.detail > 0 ) { 
+			txtZ.style.backgroundColor = "red";
+		} else if (e.detail < 0) { 
+			txtZ.style.backgroundColor = "blue";
+		} else { 
+			txtZ.style.backgroundColor = "grey";
+		}
+
+
+  	},false);
+
+  
+  btnPlus.onclick = function() {
+	var xVrednost = txtX.value;
+	if(xVrednost === "") {
+		alert("morate  uneti x !");
+		return;
+	}
+	
+	var yVrednost = txtY.value;
+	if(yVrednost === "") {
+		alert("morate  uneti y !");
+		return;
+	}
+	xVrednost = parseInt(xVrednost);
+	yVrednost = parseInt(yVrednost);
+	var zVrednost = xVrednost + yVrednost;
+	
+	// AKO JE > 0 , oboji POLJE u CRVENO
+	
+	// AKO JE  < 0 OBOJI u PLAVO
+	
+	// AKO JE == 0 , oboji u SIVO
+	
+	txtZ.value = zVrednost;
+	var eventPayload = {
+		'detail' : zVrednost
+	};
+	var event = new CustomEvent('valueChanged', eventPayload);
+	document.dispatchEvent(event);
+
+	
+	
+  };
+};
+</script>
+</head>
+<body>
+X: <input type="text" id="txtX"> <br>
+Y: <input type="text" id="txtY"> <br>
+Z: <input type="text" id="txtZ" disabled > <br>
+<button id="btnPlus"> + </button>
+
+
+
+<div id="logDiv">
+	<button> DUGME</button>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+<script>
+
+	function Osoba() {
+		this.ime = "pera";
+		this.zdravo = function() {
+			alert("zdravo! ja sam " + yhis.ime);
+		}:
+	}
+	var dugme = document.getElementById("brt");
+	alert("dugme je " + dugme);
+	//document.write("neki tekst napisan dodatno kodom");
+	
+	var f1 = function(txt) {
+		alert(txt);
+	};
+	f1("preko reference ");
+	window.onload = function() {
+
+		
+		var dugme = document.getElementById("brt");
+		alert("loadovan #1" );
+	};
+	var brojac = 0;
+	var f2 = function() {
+		brojac++;
+		if(brojac >= 3) {
+			clearInterval(intervalHandler);
+		}
+		var noviP = document.createElement("p");
+		var textNode = document.createTextNode("poyy");
+		var div = document.getElementById("logDiv");
+		
+		noviP.appendChild(textNode);
+		div.appendChild(noviP);
+		alert("loadovan #2");
+};		
+	var intervalHandler = setInterval(f2, 5000);
+
+	window.addEventListener ("load", f2, false );
+	
+	setTimeout(function() {
+		alert("tajmout");
+	},5000);
+	
+</script>
+
+
+<script>
+
+
+function mojaFunkcija() {
+	document.write("ode");
+	alert("stokooo");
+	alert("x je: " + x);
+	document.body.style.backgroundColor = "green";
+	var dugme = document.getElementById("brt");
+	dugme.style.backgroundColor = "yellow";
+}
+</script>
+</head>
+
+<body>
+	<button id="brt" onclick="mojaFunkcija()"> evo ga </button>
+
+
+<script>
+
+	var x="1";
+	var y= 1;
+	
+	console.log("da li je i zivo i ovde" + i);
+	console.log("X je jednako Y" + (x==y));
+	console.log("X je jednako Y" + (x===y));
+	
+	for(var i = 0; i<6; i++) {
+		console.log("I JE:" + i );
+	}
+	console.log("i je zivo i dalje!!!" + i);
+</script>
+
+<div id="logDiv">
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<html>
+<head>
+<script src="jquery.js"></script>
+<script>
+
+var sveOk = function(data) {
+	alert("OK " + data);
+};
+
+var nijeOk = function(data){
+	alert("NIJE OK " + data);
+};
+
+setTimeout(function(){
+	$.ajax({
+		url: "ajax.txt",
+		success: sveOk,
+		error: nijeOk
+	});
+}, 2000);
+
+setTimeout(function(){
+	$.ajax({
+		url: "OsobaJSONServlet",
+		success: function(data) {
+			alert("Name: " + data.name);
+			alert("Age: " + data.age);
+		},
+		error: nijeOk,
+		dataType: "json"
+	});
+}, 1500);
+
+setTimeout(function(){
+	var osobaDTO = {};
+	osobaDTO.name = "STEVA";
+	osobaDTO.age = 10;
+	//Convert js object to json string
+	var osobaDTOStr = JSON.stringify(osobaDTO);
+	$.ajax({
+		url: "OsobeJSONServlet",
+		data: osobaDTOStr,
+		type: "POST",
+		success: function(data) {
+			var tabela = $("#tblUsers");
+			for(let i = 0; i < data.length; ++i)
+			{
+				let trStart = "<tr>";
+				let tdName = "<td>" + data[i].name + "</td>";
+				let tdAge = "<td>" + data[i].age + "</td>";
+				let trEnd = "</tr>";
+				tabela.append(trStart + tdName + tdAge + trEnd);
+			}
+		},
+		error: nijeOk,
+		dataType: "json"
+	});
+}, 1000);
+
+</script>
+</head>
+<body>
+	X: <input type="text" id="txtX"> <br>
+	Y: <input type="text" id="txtY"> <br>
+	Z: <input type="text" id="txtZ" disabled > <br>
+	<button id="btnPlus"> + </button>
+	
+	<div id="logDiv">
+
+	</div>
+	
+	<table border=1 id="tblUsers">
+		<tr>
+			<th>NAME</th>
+			<th>AGE</th>
+		</tr>
+	</table>
+
+</body>

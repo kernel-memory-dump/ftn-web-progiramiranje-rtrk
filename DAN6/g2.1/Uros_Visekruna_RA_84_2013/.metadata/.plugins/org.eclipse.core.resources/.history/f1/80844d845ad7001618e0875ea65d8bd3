@@ -1,0 +1,27 @@
+package uros.visekruna.socket.client;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+
+public class GlavnaKlijent {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		
+	
+		Socket vezaKaServeru = new Socket("10.81.35.60", 8080);
+		OutputStream izlazniStream = vezaKaServeru.getOutputStream();
+		Scanner skener = new Scanner(System.in);
+		String porukaZaServer = skener.nextLine();
+		
+		PrintWriter printer = new PrintWriter(izlazniStream);
+		printer.println(porukaZaServer);
+		printer.flush();
+		printer.close();
+
+	}
+
+}

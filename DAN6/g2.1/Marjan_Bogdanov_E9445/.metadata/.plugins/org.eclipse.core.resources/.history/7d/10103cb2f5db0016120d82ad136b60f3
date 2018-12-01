@@ -1,0 +1,57 @@
+package Marjan.Bogdanov.dao;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.nio.file.attribute.UserPrincipalLookupService;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.coyote.http11.filters.SavedRequestInputFilter;
+
+import Marjan.Bogdanov.model.User;
+/**
+ * Data layer for user
+ * @author student
+ *
+ */
+public class UserDao {
+	
+	private static final String FILE_NAME = "users.txt";
+	private static List<User> users = new ArrayList<>();
+	private static Object Lock1 = new Object();
+		
+	public static void addUser(User user) {
+		users.add(user);	
+		saveFile();	
+	}
+	
+	
+	
+	private static void saveFile() throws FileNotFoundException {
+		synchronized (Lock1) {
+			File f = new File(FILE_NAME);
+			//open in append if file alredy exists
+			FileOutputStream outputStream = new FileOutputStream(f,true);
+			PrintWriter printer = new PrintWriter(outputStream);
+			StringBuilder builder = new StringBuilder();
+			for (User user : users){
+				builder.append(user.getIme()).append(";").append(user.getTip());
+				builder.append("\n");
+			}
+			printer.print(builder.toString());
+			printer.flush();
+			printer.close();
+		}
+		
+		
+	}
+
+	public static List<User> getAllUsers(){
+		return users;
+	}
+	
+	
+
+}

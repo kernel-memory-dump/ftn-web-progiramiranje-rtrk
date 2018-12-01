@@ -1,0 +1,103 @@
+<html>
+<head>
+<script>
+
+//var dugme = document.getElementById("btnHamurabi");
+//alert("dugme je" + dugme);
+
+function Osoba(){
+	this.ime = "pera";
+	this.zdravo = function(){
+		alert("zdravo! ja sam " + this.ime);
+	};
+}
+
+var os1 = new Osoba();
+os1.zdravo();
+
+var f1 = function(txt){
+	alert(txt);
+};
+
+f1("preko reference");
+
+window.onload = function() {
+	var dugme = document.getElementById("btnHamurabi");
+	alert("loaded 1");
+};
+
+var brojac = 0;
+var f2 = function(){
+	
+	brojac++;
+	if(brojac >= 3){
+		clearInterval(intervalHandler);
+		return;
+	}
+	var noviP = document.createElement("p");
+	var textNode = document.createTextNode("Pozy");
+	var div = document.getElementById("logDiv");
+	
+	//povezujemo text node i paragraph
+	noviP.appendChild(textNode);
+	//div i paragraph
+	div.appendChild(noviP);
+	
+	alert("ucitan drugi");
+};
+
+window.addEventListener("load", f2, false);
+
+function mojaFunkcija(){
+	alert("Poi st00k00!");
+	alert("x je" + x);
+	//document.body.style.backgroundColor = "magenta";
+	var dugme = document.getElementById("btnHamurabi");
+	dugme.style.backgroundColor = "blue";
+	
+	//document.write("lolcina");
+};
+var intervalHandler = setInterval(f2, 5000);
+
+setTimeout(function(){
+	alert("TAJMAUT");
+}, 5000);
+
+</script>
+
+<script>
+document.write("neki tekst napisan dodatno kodom");
+</script>
+
+
+</head>
+
+<body>
+<button id="btnHamurabi" onclick="mojaFunkcija()"> EVE! </button>
+<script>
+
+var x = "1";
+var y = 1;
+
+console.log("X je jednako y" + (x==y));
+console.log("X je jednako y" + (x===y));
+
+var i = 0;
+
+for(var i = 0; i < 5; i++) {
+	console.log("I je:" + i);
+}
+
+console.log("i je zivo i dalje!!!" + i);
+
+</script>
+
+<script>
+document.write("neki tekst napisan dodatno kodom");
+</script>
+
+<div id="logDiv"></div>
+
+</body>
+
+</html>

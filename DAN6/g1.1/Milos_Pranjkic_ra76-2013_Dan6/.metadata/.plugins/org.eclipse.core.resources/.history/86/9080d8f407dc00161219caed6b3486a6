@@ -1,0 +1,19 @@
+package milos.pranjkic.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import milos.pranjkic.model.User;
+
+/**
+ * Handles Data persistence related to user
+ * @author student
+ *
+ */
+public class UserDao {
+	
+	private static List<User> users = new ArrayList<>();
+	
+	private static final String FILE_NAME = "userFile.txt"
+
+}

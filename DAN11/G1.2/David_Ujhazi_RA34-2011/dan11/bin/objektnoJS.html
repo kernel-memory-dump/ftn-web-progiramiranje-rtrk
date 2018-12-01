@@ -1,0 +1,51 @@
+<html>
+<head>
+<script type="text/javascript">
+// 	var originalGet = document.getElementById;
+// 	document.getElementById = function(id) {
+// 		var cvor = originalGet(id);
+// 		cvor.value = "HAHAHAHAHAHA";
+// 		return cvor;
+// 	}
+	
+	
+	function Osoba(ime) {
+		this.ime = ime;
+		var self = this;
+		this.prijatelji = [];
+		this.mapaPrijatelja = {};
+		this.dodajPrijatelja = function(noviPrijatelj){
+			this.prijatelji.push(noviPrijatelj);
+			if(this.mapaPrijatelja.hasOwnProperty(noviPrijatelj.ime)){
+				alert("Vec si ga dodao, ne moze opet");
+				return;
+			}
+			this.mapaPrijatelja[noviPrijatelj.ime] = noviPrijatelj;
+		};
+
+		this.zdravo = function() {
+			alert("Zdravo ja sam " + this.ime);
+			setTimeout(function() {
+				alert("Ime je: " + this.ime); // this this is window, cause setTimeout is function of window
+				alert("Ime je: " + self.ime);
+
+			}, 1000);
+		}
+	}
+
+	var os1 = new Osoba("zika");
+	var os2 = new Osoba("mika");
+	os1.zdravo();
+
+	os1.dodajPrijatelja(os2);
+	os1.dodajPrijatelja(os2);
+	
+	//document.getElementById("cheese");
+	
+</script>
+</head>
+<body>
+	<p id="cheese">pro paragraph</p>
+
+</body>
+</html>

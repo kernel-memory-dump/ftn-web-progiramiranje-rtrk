@@ -1,0 +1,5 @@
+package uros.visekruna.model;
+
+public class User {
+
+}

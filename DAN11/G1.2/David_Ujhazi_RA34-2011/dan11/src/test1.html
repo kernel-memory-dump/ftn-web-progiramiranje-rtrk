@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript">
+window.onload = function (){
+	
+		var handler = function() {
+			alert("Zvek");
+		}
+	var btnKlik = document.getElementById("btnKlik");
+	btnKlik.onclick = handler;
+	btnKlik.onclick = function() {
+		alert("gazi");
+		document.body.style.backgroundColor = "blue";
+	}
+	btnKlik.addEventListener("click",handler,false);
+};</script>
+
+</head>
+<body>
+	<script type="text/javascript">
+	
+	
+	for(let i = 0; i < 5; i++){
+		console.log(i);
+	}
+	</script>
+	<button id="btnKlik">Klik</button>
+</body>
+</html>

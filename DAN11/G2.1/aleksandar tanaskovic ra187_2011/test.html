@@ -1,0 +1,70 @@
+<html>
+<head>
+
+<script>
+
+	
+	var dugme = document.getElementById(brt)
+	alert("dugme je " + dugme);
+	document.write("NEKI TEKST NAPISAN DODATNIM KODOM!");
+	var f1 = function(txt){
+		alert(txt);
+	}
+	
+	fi("PREKO REFERENCE!");
+	
+	window.onloaded = function(){
+		var dugme = document.getElementById("brt");
+		alert("LOADOVAN #1");
+	};
+	
+	var f2 = function(){
+		alert("LOADOVAN #2");
+	};
+	
+	window.addEventListener("load",f2,false);
+	
+</script>
+
+<script>
+function mojaFunkcija(){
+	
+	alert("POYYY STOKO!");
+	alert("x je " + x);
+	document.body.style.backgroundColor = "red";
+	var dugme = document.getElementById("brt");
+	dugme.style.backgroundColor = "blue";
+	
+	document.write("ODEEEEEEEE!");
+}
+</script>
+
+</head>
+
+<body>
+
+<button id="brt" onclick="mojaFunkcija()"> EVE GA </button>
+
+<script>
+var x = "1";
+var y = 1;
+
+console.log("X JE JEDNAKO Y " + (x==y));
+console.log("X JE JEDNAKO Y " + (x===y));
+
+for(var i = 0; i < 5; i++){
+	console.log("I JE : " + i);
+}
+
+console.log("i JE NEKIM CUDOM ZIVO I DALJE!!!!!!!!!!!!!!!!" +i);
+
+</script>
+
+<script>
+
+	document.write("NEKI TEKST NAPISAN DODATNO KODOM!");
+	
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+package stefan.stojanovic.dao;
+
+public class UserDao {
+
+}

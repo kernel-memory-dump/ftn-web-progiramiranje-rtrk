@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+	<title>Treci zadatak</title>
+</head>
+<body>
+	
+	<h1> <font color="blue"> Produzenje registracije </font></h1> 
+	
+	<p>
+		Na ovoj stranici mozete obaviti produzenje registracije Vaseg automobila.
+		<br>Molimo Vas da popunite sledeci formular
+	</p>
+	
+	<!--Neki komentar-->
+	<table border="1" bordercolor="gray">
+		<tr bgcolor="gray">
+			<th colspan="2"> <font color="blue"> Produzenje registracije </font></th>
+		</tr>
+		
+		<tr bgcolor="red">
+			<td> Ime: </td>
+			<td> <input type="text" name="i0me"> </td>
+		</tr>
+		
+		<tr bgcolor="yellow">
+			<td> Prezime: </td>
+			<td> <input type="text" name="prezime"> </td>
+		</tr>
+		
+		<tr bgcolor="red">
+			<td> JMBG: </td>
+			<td> <input type="text" name="jmbg"> </td>
+		</tr>
+		
+		<tr>
+			<td> Marka vozila: </td>
+			<td>
+				<select id="select1" onchange="getValue(this.value)">
+					<option value="$">--Please Select--</option>
+					<option value="mercedes"> Mercedes </option>
+					<option value="renault"> Renault </option>
+					<option value="peugeot"> Peugeot </option>
+				</select>
+			</td>
+		</tr>
+		
+		<tr bgcolor="yellow">
+			<td> Tip vozila: </td>
+			<td> <input type="text" name="tipvozila"> </td>
+		</tr>
+		
+		<tr bgcolor="red">
+			<td> Registarska oznaka: </td>
+			<td> <input type="text" name="registarskaoznaka"> </td>
+		</tr>
+		
+		<tr bgcolor="yellow">
+			<th colspan="2">
+			
+               <form name="posalji" action="#" >
+                <input id="edit" type="submit" name="edit" value="Posalji" />
+               </form>
+           </th>
+		   
+		</tr>
+	</table>
+	
+	
+	
+</body>
+</html>
+	

@@ -1,0 +1,115 @@
+<html>
+<head>	
+	<script>
+		function Osoba()
+		{
+			this.ime = "pera";
+			
+			this.zdravo = function()
+			{
+				alert("ZDRAVO! JA SAM " + this.ime);
+			}
+		}
+		
+		var os1 = new Osoba();
+		os1.zdravo();
+	
+	
+		var dugme = document.getElementById("brt");
+		alert("DUGME JE " + dugme);
+		
+		document.write("NEKI TEKST NAPISAN DODATNO KODOM");
+		
+		
+		
+		var f1 = function(txt)
+		{
+			alert(txt);
+		};
+		
+		f1("PREKO REFEREENCE");
+		
+		window.onload = function()
+		{
+			var dugme = document.getElementById("brt");
+			
+			alert("LOADOVAN #1");
+		};
+		
+		var brojac = 0;
+		
+		var f2 = function()
+		{
+			brojac++;
+			if(brojac == 3)
+			{
+				clearInterval(intervalHandler);
+			}
+		
+			var noviP = document.createElement("p");
+			var textNode  =document.createTextNode("poyy");
+			var div = document.getElementById("logDiv");
+			
+			//POVEZUJEMO TEXT NODE I PARAGRAF
+			noviP.appendChild(textNode);
+			
+			//POVEZUJEMO PARAGRAF I DIV
+			div.appendChild(noviP);
+			
+			alert("LOADOVAN #2");
+		};
+		
+		var intervalHandler = setInterval(f2, 5000);
+		
+		window.addEventListener("load", f2, false);
+		
+		setTimeout(function()
+		{
+			alert("TAJM AUT");
+		}
+		, 5000);
+		
+	</script>
+	
+	<script>
+		function mojaFunkcija()
+		{
+			alert("POYY STOKO");
+			alert("x je " + x);
+			document.body.style.backgroundColor = "red";
+			var dugme = document.getElementById("brt");
+			dugme.style.color = "green";
+			
+			//document.write("ODDEEEEE");
+		}
+	</script>
+
+</head>
+
+<body>
+	<button id="brt" onclick="mojaFunkcija()" > EVE GA </button>
+
+	<script>
+		var x = "1";
+		var y = 1;
+		
+		console.log("DA LI JE i ZIVO I OVDE " + i);
+		console.log("X JE JEDNAKO Y " + (x==y));
+		console.log("X JE JEDNAKO Y " + (x===y));
+		
+		var i = 0;
+		for(var i = 0; i < 5; i++)
+		{
+			console.log("I JE" + i);
+		}
+		
+		console.log("i JE ZIVO I DALJE!!!" + i);
+	</script>
+	
+	<div id="logDiv">
+		
+	</div>
+	
+</body>
+
+</html>

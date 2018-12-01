@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function Osoba() {
+            this.ime = "pera";
+            this.zdravo = function() {
+                alert("zdravo! ja sam" + this.ime);
+            };
+        }
+
+        var os1 = new Osoba();
+        os1.zdravo();
+        var dugme = document.getElementById("brt");
+        alert("dugme je" + dugme);
+        document.write("Neki tekst napisan iz koda");
+
+        var f1 = function(txt) {
+            alert(txt);
+        };
+
+        window.onload = function() {
+            var dugme = document.getElementById("brt");
+            alert("dugme je" + dugme);
+        };
+        var brojac = 0;
+
+        var f2 = function() {
+            brojac++;
+            if (brojac == 3) {
+                clearInterval(intervalHandler);
+                return;
+            }
+            var noviP = document.createElement("p");
+            var textNode = document.createTextNode("poyy");
+            var div = document.getElementById("logDiv");
+
+            //povezujemo node i paragraf
+            noviP.appendChild(textNode);
+            //povezemo paragraf i div
+            div.appendChild(noviP);
+            alert("Loadovan #2");
+        };
+
+        var intervalHandler = setInterval(f2, 5000);
+        window.addEventListener("load", f2, false);
+
+        setTimeout(function() {
+            alert("tajmout");
+        }, 5000);
+    </script>
+    <script>
+        function mojaFunkcija() {
+            alert("OPAAAAA DJURDJOOOO");
+            alert("x je " + x);
+            document.body.style.backgroundColor = "green";
+            var dugme = document.getElementById("brt");
+            dugme.style.backgroundColor = "blue";
+            document.write("odeeee");
+        }
+    </script>
+</head>
+
+<body>
+    <button id="brt" onclick="mojaFunkcija()">opaaaa djurdjoooo</button>
+    <script>
+        var x = "1";
+        var y = 1;
+
+        console.log("x je jednako y" + (x == y));
+        console.log("x je jednako y" + (x === y));
+
+        for (var i = 0; i < 5; i++) {
+            console.log("I JE: " + i);
+        }
+        console.log("I je zivo i dalje " + i);
+    </script>
+    <script>
+        document.write("Neki tekst napisan iz koda");
+    </script>
+    <div id="logDiv">
+
+    </div>
+</body>
+
+</html>

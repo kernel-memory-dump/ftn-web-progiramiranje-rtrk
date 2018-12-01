@@ -1,0 +1,53 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+ <html>
+	<head>
+		<title> Registracija </title>
+		<meta charset="UTF-8">
+	</head>
+	
+	<body>
+		<h1><font color="IndianRed"> Produzenje registracije </font></h1>
+		<p> Na ovoj stranici mozete obaviti produzenje registracije Vaseg automobila. Molimo Vas da popunite sledeci formular. </p>
+		<form action="zad1.html" method="POST">
+			<table border="1">
+				<tr>
+					<th colspan="2"><font color="IndianRed"> Produzenje registracije </font></th>
+				</tr>
+				<tr bgcolor="#E0E0E0">
+					<td> Ime </td>
+					<td><input type="text" name="ime"></td>
+				</tr>
+				<tr bgcolor="#D3D3D3">
+					<td> Prezime </td>
+					<td><input type="text" name="prezime"></td>
+				</tr>
+				<tr bgcolor="#C2C2C2">
+					<td> JMBG </td>
+					<td><input type="text" name="jmbg"></td>
+				</tr>
+				<tr bgcolor="#C2C2C2">
+					<td> Marka Vozila </td>
+					<td>
+						<select name="marke">
+						  <option value="Mercedes">Mercedes</option>
+						  <option value="Peugeot">Peugeot</option>
+						  <option value="Renault">Renault</option>
+						</select>
+					</td>
+				</tr>
+				<tr bgcolor="#C2C2C2">
+					<td> Tip vozila </td>
+					<td><input type="text" name="tip"></td>
+				</tr>
+				<tr bgcolor="#C2C2C2">
+					<td> Registarska oznaka </td>
+					<td><input type="text" name="oznaka"></td>
+				</tr>
+				<tr bgcolor="#E0E0E0">
+					<td colspan="2"><center><input type="submit" name="posalji" value="Posalji"> </center></td>
+				</tr>
+			</table>
+		</form>
+		<p> U gornjem combo box-u kao stavke nalaze se sledece vrednosti: <i>Mercedes</i>, <i>Peugeot</i> i <i>Renault<i>.
+	</body>
+</html>

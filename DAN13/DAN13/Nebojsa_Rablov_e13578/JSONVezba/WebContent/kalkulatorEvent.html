@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<script src="jquery.js"></script>
+		<script>
+			
+			var sveOk = function(data) {
+				alert("ajax podaci " + data);
+			};
+			
+			var nijeOk = function(data) {
+				alert(data);
+			};
+			
+			setTimeout(function() {
+				// argument ajax funkcije je javascript objekat
+				$.ajax({
+					url: "1.txt",
+					//f-ja koja se poziva ako dobije 200 ok
+					success: sveOk,
+					error: nijeOk
+				});
+			}, 3000);
+			
+			setTimeout(function() {
+				// argument ajax funkcije je javascript objekat
+				$.ajax({
+					url: "OsobaJSONServlet",
+					//f-ja koja se poziva ako dobije 200 ok
+					success: function(data) {
+						alert("Ime je " + data.ime);
+						alert("Sarost je " + data.starost);
+					},
+					error: nijeOk,
+					dataType: "json"
+				});
+			}, 3000);
+			
+			setTimeout(function() {
+				
+				var osobaDTO = {};
+				osobaDTO.ime = "Pera";
+				osobaDTO.starost = 10;
+				//Pretvara js objekt u json string
+				var osobaDTOStr = JSON.stringify(osobaDTO);
+				// argument ajax funkcije je javascript objekat
+				$.ajax({
+					url: "OsobeJSONServlet",
+					data: osobaDTOStr,
+					type: "POST",
+					//f-ja koja se poziva ako dobije 200 ok
+					success: function(data) {
+						var tabela = $("#tblUsers");
+						for(let i = 0; i < data.length; i++){
+							let trStart = "<tr>";
+							let tdIme = "<td>" + data[i].ime + "</td>";
+							let tdStarost = "<td>" + data[i].starost + "</td>";
+							let trEnd = "</tr>";
+							tabela.append(trStart + tdIme + tdStarost + trEnd);
+						}
+					},
+					error: nijeOk,
+					dataType: "json"
+				});
+			}, 3000);
+			
+		</script>
+	</head>
+	<body>
+		X: <input type="text" id="txtX"> <br>
+		Y: <input type="text" id="txtY"> <br>
+		Z: <input type="text" id="txtZ" disabled > <br>
+		
+		<button id="btnPlus"> + </button>
+		
+		<div id="logDiv">
+		</div>
+		
+		<table id="tblUsers">
+			<tr>
+				<th>Ime</th>
+				<th>Starost</th>
+			</tr>
+		</table>
+	
+	</body>
+</html>

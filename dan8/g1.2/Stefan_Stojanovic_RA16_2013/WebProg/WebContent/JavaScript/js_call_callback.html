@@ -1,0 +1,32 @@
+<html>
+<head>
+
+<script type="text/javascript">
+function mojafunkcija(param, callback)
+{
+	if (param > 10) {
+		callback('Veca od 10');
+	} else {
+		callback('Manja ili jednaka 10');
+	}
+}
+</script>
+
+</head>
+<body>
+
+<form>
+<input type="button" 
+onclick="mojafunkcija(1, function(text) {alert(text);})" 
+value="Pozovi funkciju (1)">
+<br />
+<input type="button" 
+onclick="mojafunkcija(20, function(text) {alert(text);})" 
+value="Pozovi funkciju (20)">
+</form>
+
+<p>Pritiskom na taster pozvacete funkciju.</p>
+
+</body>
+</html>
+

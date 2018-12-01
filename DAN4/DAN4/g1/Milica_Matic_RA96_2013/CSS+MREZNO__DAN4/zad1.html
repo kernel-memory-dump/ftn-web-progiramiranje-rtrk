@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+ <html>
+	<head>
+		<title> Korisnici koji su registrovali vozila </title>
+		<meta charset="UTF-8">
+		<style>
+			h1{
+				color: blue;
+				font-size: 20px;
+			}
+			th{
+				color: blue;
+				font-size: 14px;
+			}
+			p{
+				font-family: Tahoma;
+				font-size: 10px;
+			}
+			
+			tr:nth-child(even) {
+				background-color: #E0E0E0;
+			}
+			tr:nth-child(odd) {
+				background-color: #C2C2C2;
+			}
+			tr.tableheader{
+				background-color: yellow;			<!-- moglo je i nad th da se stavi -->
+			}	
+			td{
+				font-family: Arial;
+				font-size: 12px;
+			}	
+		</style>
+	</head>
+	
+	<body>
+		<h1> Registrovani korisnici </h1>
+		<p> Na ovoj stranici prikazani su korisnici koji su registrovali svoja vozila. </p>
+		<table border="1">
+			<tr class="tableheader">
+				<th> Ime </font></th>
+				<th> Prezime </font></th>
+				<th> JMBG </font></th>
+			</tr>
+			<tr>
+				<td> Milica </td>
+				<td> Matic </td>
+				<td> 123 </td>
+			</tr>
+			<tr>
+				<td> Una </td>
+				<td> Radosavac </td>
+				<td> 456 </td>
+			</tr>
+			<tr>
+				<td> Igor </td>
+				<td> Stefanovic </td>
+				<td> 789 </td>
+			</tr>
+		</table>
+	</body>
+</html>

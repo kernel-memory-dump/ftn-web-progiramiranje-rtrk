@@ -1,0 +1,5 @@
+package Marjan.Bogdanov.dao;
+
+public class UserDao {
+
+}
